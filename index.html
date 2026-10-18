@@ -20,7 +20,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 /* layout: night-sky official site. sticky wordmark bar, one route visible at a time, wide expanded English display over small Japanese labels, jackets carry the colour */
 :root{
@@ -52,7 +52,7 @@ button{font:inherit;color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
 
 /* header */
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 94%,transparent);border-bottom:1px solid var(--line)}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .mark{width:26px;height:31px;background:var(--fg);-webkit-mask:url(img/logo.png) center/contain no-repeat;mask:url(img/logo.png) center/contain no-repeat}
@@ -255,7 +255,8 @@ main{min-height:70vh}
 .art .body p{font-size:15.5px;line-height:2}
 
 /* full-page night sky, dark mode only */
-#night{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:none}
+#night{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:none;
+  background:radial-gradient(circle at 85% 8%,rgba(67,199,202,.20),rgba(67,199,202,.07) 34%,transparent 75%),radial-gradient(circle at 5% 92%,rgba(255,122,92,.20),rgba(255,122,92,.07) 32%,transparent 70%),radial-gradient(circle at 55% 50%,rgba(120,90,220,.16),rgba(120,90,220,.05) 25%,transparent 55%)}
 main,.foot{position:relative;z-index:1}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #night{display:block}}
 :root[data-theme="dark"] #night{display:block}
@@ -270,8 +271,8 @@ main,.foot{position:relative;z-index:1}
 /* ===== space reveal. hidden states apply only once the script has armed it (html.rv-on) =====
    letters ignite like stars in random order / a comet draws each heading rule /
    jackets come out from behind an eclipse / text arrives doppler-shifted and settles */
-.rv-on .rv-ch{display:inline-block;opacity:0;transform:scale(.15);filter:blur(5px) brightness(3);transition:opacity .35s,transform .9s cubic-bezier(.16,1.3,.3,1),filter 1s;transition-delay:calc(var(--r)*70ms)}
-.rv-on .in .rv-ch{opacity:1;transform:none;filter:none}
+.rv-on .rv-ch{display:inline-block;opacity:0;transform:scale(.15);transition:opacity .35s,transform .9s cubic-bezier(.16,1.3,.3,1);transition-delay:calc(var(--r)*70ms)}
+.rv-on .in .rv-ch{opacity:1;transform:none}
 .rv-host{position:relative}
 .rv-on .sh.rv{position:relative;border-bottom-color:transparent;background:linear-gradient(90deg,transparent,var(--fg) 30%) left bottom/0% 1px no-repeat;transition:background-size 1.2s cubic-bezier(.5,0,.2,1) .2s}
 .rv-on .sh.rv.in{background-size:100% 1px}
@@ -280,8 +281,8 @@ main,.foot{position:relative;z-index:1}
 @keyframes comet{0%{left:0;opacity:0}10%{opacity:1}85%{opacity:1}100%{left:100%;opacity:0}}
 .rv-on .sh.rv .jp,.rv-on .sh.rv .more{opacity:0;letter-spacing:.6em;transition:opacity .8s .7s,letter-spacing 1s .7s cubic-bezier(.2,.8,.2,1)}
 .rv-on .sh.rv.in .jp{opacity:1;letter-spacing:.14em}.rv-on .sh.rv.in .more{opacity:1;letter-spacing:.2em}
-.rv-on .rv-img{clip-path:circle(0% at 50% 50%);filter:brightness(2.2) saturate(0);transition:clip-path 1.3s cubic-bezier(.65,0,.2,1),filter 1.6s .2s;transition-delay:calc(var(--i,0)*110ms)}
-.rv-on .rv-img.in{clip-path:circle(75% at 50% 50%);filter:none}
+.rv-on .rv-img{clip-path:circle(0% at 50% 50%);transition:clip-path 1.3s cubic-bezier(.65,0,.2,1);transition-delay:calc(var(--i,0)*110ms)}
+.rv-on .rv-img.in{clip-path:circle(75% at 50% 50%)}
 .rv-on .rv-up{opacity:0;transform:translateY(18px);text-shadow:-14px 0 0 color-mix(in srgb,var(--teal) 70%,transparent),14px 0 0 color-mix(in srgb,var(--coral) 70%,transparent);transition:opacity .9s,transform 1s cubic-bezier(.2,.8,.2,1),text-shadow 1.2s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
 .rv-on .rv-up.in{opacity:1;transform:none;text-shadow:0 0 0 transparent}
 .rv-on .axis.rv circle{stroke-dasharray:660;stroke-dashoffset:660;fill-opacity:0;transform-origin:200px 185px;transform:rotate(-120deg);transition:stroke-dashoffset 1.8s cubic-bezier(.6,0,.2,1),fill-opacity 1s 1.3s,transform 2s cubic-bezier(.2,.8,.2,1)}
@@ -349,6 +350,7 @@ const SITE={
   follow:[["Instagram","https://www.instagram.com/m_cosmosboys/","@m_cosmosboys"],["YouTube","https://www.youtube.com/channel/UCk_e-l3b1g8XbOK_H6Ccmug","チャンネル"],["TikTok","https://www.tiktok.com/@cosmosboy33","@cosmosboy33"],["X","https://x.com/M_CosmosBoys","@M_CosmosBoys"]]
 };
 const IMG=id=>`img/${id.replace(/-/g,"_")}.jpg`;
+const TH=id=>`img/t/${id.replace(/-/g,"_")}.jpg`;
 /* curated stories, checked line by line; shown only on ABOUT, never on release pages */
 const STORIES=[{"t": "Red Shift", "id": "red-shift", "h": "遠ざかる光は赤く見える", "p": ["赤方偏移。遠ざかっていく星の光が、引き伸ばされて少し赤くずれて届く現象。", "人も同じで距離ができると、本当の自分とは違う色で見られてしまう。傷つくのが怖くて離れたのに、本当は誰かと話したかった。Chapter2最初の一曲。"]}, {"t": "Don't Stop the Transit", "id": "don-t-stop-the-transit", "h": "消えたら何も残らない", "p": ["同じ場所に集まって、くだらないことで笑っていた日々。いつか連絡は減って、互いの毎日を知らなくなる。そう分かっていても、この時間を終わらせたくない。", "惑星が太陽の前を横切るトランジットは、太陽と惑星と地球が一直線に並んだときだけ起きる。たまたま重なって一緒にいられる今を、そのわずかな通過に重ねた。消えないでほしい友情を歌った曲。"]}, {"t": "APOLLO (Chapter2)", "id": "signal", "h": "君は僕のアポロだった", "p": ["アポロは人類を初めて月へ送った宇宙計画の名前で、ギリシャ神話では太陽の神の名前でもある。", "夢を一緒に追った太陽みたいな友人が、時が過ぎるにつれ少しずつ遠くへ行ってしまう。手を伸ばすこともできずさよならも言えずに、空へ昇っていくその姿を見送る歌。1stアルバム\"SIGNAL\"の3曲目。"]}, {"t": "End of the Era (Chapter2)", "id": "end-of-the-era-chapter2", "h": "これは終わりじゃない始まりの合図", "p": ["価値観の多くはある日突然変わるわけじゃない。少数派だった考えがいつの間にか多数派になり、当たり前だったものが少しずつ少数派になっていく。", "入れ替わる瞬間は誰にも分からない。だからバトンが渡されるのを待つつもりはない。壊れた扉をくぐり、彗星のような速さでその先頭を走る。その背中で、あとに続く仲間を引っ張っていく。Chapter1のEP「ODYSSEY」に入っていた曲をリメイク。"]}, {"t": "Dark Age in a Tiny World", "id": "dark-age-in-a-tiny-world", "h": "Not Fake", "p": ["宇宙が生まれてしばらくの間、星はひとつもなかった。あったのは、水兵リーベで覚える最初の3つ、水素とヘリウムとリチウムくらい。最初の星ができるまで1億年以上続いた暗闇がダークエイジ。", "夢はあるのに、まだ何も始められていない。うまくいかない理由を誰かのせいにして、言い訳と悪口でごまかしてきた。偽物の自分と向き合ったとき、暗闇の中で何かが変わり始める。"]}];
 const SIGNAL_TR=["Oi! Mr. Fermi","Parallax","APOLLO (Chapter2)","Rogue Planet","Astronaut (Chapter2)","What You Want","Don't Stop the Transit","Spring Tide","Star Sign (Chapter2)","589nm","The Balance","Red Shift","Telescope (Chapter2)","Parker Spiral","Stellar Wind"];
@@ -419,7 +421,7 @@ const daysTo=d=>Math.round((new Date(d+"T00:00:00Z")-new Date(todayJ+"T00:00:00Z
 const isSoon=r=>r.soon&&r.d>todayJ;
 const ext=(href,label,cls="btn")=>`<a class="${cls}" href="${href}" target="_blank" rel="noopener">${label}</a>`;
 const sh=(en,jp,more)=>`<div class="sh"><h2><span class="en">${en}</span><span class="jp">${jp}</span></h2>${more?`<a class="more" href="#${more}">VIEW ALL</a>`:""}</div>`;
-const relCard=r=>`<a class="rc" href="#r-${r.id}"><span class="im"><img src="${IMG(r.id)}" alt="${esc(r.t)}のジャケット" loading="lazy">${isSoon(r)?`<span class="badge">COMING SOON</span>`:""}</span><span class="meta"><span class="t">${esc(r.t)}</span><span class="s">${r.ty} / ${dot(r.d)}</span></span></a>`;
+const relCard=r=>`<a class="rc" href="#r-${r.id}"><span class="im"><img src="${TH(r.id)}" alt="${esc(r.t)}のジャケット" loading="lazy" decoding="async">${isSoon(r)?`<span class="badge">COMING SOON</span>`:""}</span><span class="meta"><span class="t">${esc(r.t)}</span><span class="s">${r.ty} / ${dot(r.d)}</span></span></a>`;
 const newsRow=n=>`<li><a href="#n-${n.id}"><span class="d">${dd(n.d)}</span><span><span class="tag ${n.k}">${KL[n.k]}</span><span class="t">${esc(n.t)}</span>${n.n?`<span class="n">${esc(n.n)}</span>`:""}</span><span class="go" aria-hidden="true"></span></a></li>`;
 
 /* ---------- views ---------- */
@@ -433,7 +435,7 @@ function vHome(){
   </div></section>
   <div class="wrap">
     <section class="sec">${sh("NEWS","お知らせ","news")}<ul class="nl">${NEWS.slice(0,3).map(newsRow).join("")}</ul></section>
-    <section class="sec">${sh("RANKING","よく聴かれている曲")}<ol class="rank">${RANK.map(([t,id],i)=>`<li><a href="#r-${id}"><span class="rn">${i+1}</span><img src="${IMG(id)}" alt="" loading="lazy"><span class="t">${esc(t)}</span><span class="go" aria-hidden="true"></span></a></li>`).join("")}</ol></section>
+    <section class="sec">${sh("RANKING","よく聴かれている曲")}<ol class="rank">${RANK.map(([t,id],i)=>`<li><a href="#r-${id}"><span class="rn">${i+1}</span><img src="${TH(id)}" alt="" loading="lazy" decoding="async"><span class="t">${esc(t)}</span><span class="go" aria-hidden="true"></span></a></li>`).join("")}</ol></section>
     <section class="sec">${sh("LATEST","最新の作品")}
       <div class="latest"><a href="#r-${latest.id}"><img src="${IMG(latest.id)}" alt="${esc(latest.t)}のジャケット"></a>
       <div style="display:grid;gap:14px;align-content:start;min-width:0"><div><span class="tag rel">${latest.ty} / ${dot(latest.d)}</span><h3 class="lt">${esc(latest.t)}</h3></div>
@@ -484,14 +486,14 @@ function vAbout(){
       <article><h3><b>CHAPTER2</b><small>2026.04 -</small></h3><p>Red Shiftから始まったいまの章。細かい設定はすべて捨てて、作り手自身の経験を天体現象に重ねています。曲調も歌い方も変え、ポップパンクやエモを軸にしたバンドサウンドへ。宇宙の言葉を借りていても、元になっているのは実際にあったことと、そのとき感じたこと。この章はコスモボーイズの土台を固める期間。</p><a class="more" href="#music" style="justify-self:start">CHAPTER2の作品</a></article>
       <article><h3><b>CHAPTER1</b><small>2025.09 - 2026.03</small></h3><p>最初の章は一からの手探り期間だった。宇宙を目指す幼なじみ3人組という設定で架空の物語を描いていました。EP9作で完結。いまはBandcampのみで聴けます。</p><a class="more" href="https://cosmosboys.bandcamp.com/" target="_blank" rel="noopener" style="justify-self:start">BANDCAMP</a></article>
     </div></section>
-    <section class="sec">${sh("STORIES","曲の物語")}<p class="lede">それぞれの曲に重ねた天文現象と、込めた想い。</p><div class="stories">${STORIES.map(o=>`<article class="sto"><a class="sto-h" href="#r-${o.id}"><img src="${IMG(o.id)}" alt="" loading="lazy"><span>${esc(o.t)}</span></a><h3>${esc(o.h)}</h3>${o.p.map(x=>`<p>${esc(x)}</p>`).join("")}</article>`).join("")}</div></section>
+    <section class="sec">${sh("STORIES","曲の物語")}<p class="lede">それぞれの曲に重ねた天文現象と、込めた想い。</p><div class="stories">${STORIES.map(o=>`<article class="sto"><a class="sto-h" href="#r-${o.id}"><img src="${TH(o.id)}" alt="" loading="lazy" decoding="async"><span>${esc(o.t)}</span></a><h3>${esc(o.h)}</h3>${o.p.map(x=>`<p>${esc(x)}</p>`).join("")}</article>`).join("")}</div></section>
     <section class="sec">${sh("MADE BY","中の人")}<div class="prose"><p>エム。曲づくりからSNSでの発信まで、コスモボーイズを一人で作っている。</p><p>かつてはバンドを組み、ライブハウスでPAも経験したが、どちらも志半ばで離れた。現在は社会の波に揉まれながら、AIを活用して理想のバンドの具現化に挑んでいる。</p><p>自分自身の経験を天体現象に重ね、名前のつきにくい感情を曲にしていく。ライブハウスのステージに立つバンドに、AIが勝てる日は一生来ない。それでも「このバンドのライブに行きたい」と思わせることなら、できるはずだ。</p></div></section>
   </div>`;
 }
 function vVideo(){
   const v=REL.filter(r=>r.mv);
   return `<div class="wrap"><header class="pagehead"><span class="en">VIDEO</span><p class="jp">映像</p><p class="lede">ミュージックビデオはYouTubeで公開しています。</p></header>
-    <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<a class="vc" href="${r.mv}" target="_blank" rel="noopener"><span class="im"><img src="${IMG(r.id)}" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span><span class="t">${esc(r.t)}</span><span class="s">YOUTUBE / ${dot(r.d)}</span></a>`).join("")}</div></section>
+    <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<a class="vc" href="${r.mv}" target="_blank" rel="noopener"><span class="im"><img src="${TH(r.id)}" alt="" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span><span class="t">${esc(r.t)}</span><span class="s">YOUTUBE / ${dot(r.d)}</span></a>`).join("")}</div></section>
     <section class="sec"><div class="btns">${ext(SITE.follow[1][1],"YouTubeチャンネル","btn solid")}${ext(SITE.follow[0][1],"Instagramのリール")}</div></section></div>`;
 }
 function vNews(){
@@ -544,19 +546,23 @@ document.addEventListener("click",e=>{
 
 /* night sky with an occasional meteor; static stars when motion is reduced */
 let skyRAF=0;
+const NIGHTQ=()=>getComputedStyle(document.documentElement).getPropertyValue("--night").trim()==="1";
+let NIGHT=NIGHTQ();
+const onTheme=fn=>{matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{NIGHT=NIGHTQ();fn()});new MutationObserver(()=>{NIGHT=NIGHTQ();fn()}).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]})};
 function sky(){
   cancelAnimationFrame(skyRAF);
   const c=$("sky"); if(!c) return; const x=c.getContext("2d");
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let W,H,stars=[],mets=[],last=0; const dpr=Math.min(2,devicePixelRatio||1);
-  const col=()=>getComputedStyle(document.documentElement);
+  let W,H,stars=[],mets=[],last=0,prev=0; const dpr=Math.min(1.5,devicePixelRatio||1);
+  const cs0=getComputedStyle(document.documentElement), fg=cs0.getPropertyValue("--fg").trim()||"#fff", coral=cs0.getPropertyValue("--coral").trim(), teal=cs0.getPropertyValue("--teal").trim();
   function size(){const r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
     stars=Array.from({length:Math.round(W*H/2600)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.1+.2,a:Math.random()*.6+.2,t:Math.random()*6}));}
   size(); addEventListener("resize",size,{once:true});
   function frame(t){
     if(!$("sky")) return;
-    if(getComputedStyle(document.documentElement).getPropertyValue("--night").trim()==="1"){x.clearRect(0,0,W,H);skyRAF=requestAnimationFrame(frame);return;}
-    const cs=col(), fg=cs.getPropertyValue("--fg").trim()||"#fff", coral=cs.getPropertyValue("--coral").trim(), teal=cs.getPropertyValue("--teal").trim(), night=cs.getPropertyValue("--night").trim()==="1";
+    if(NIGHT){x.clearRect(0,0,W,H);skyRAF=0;return;}
+    if(!reduce&&t-prev<33){skyRAF=requestAnimationFrame(frame);return;} prev=t;
+    const night=false;
     x.clearRect(0,0,W,H);
     for(const s of stars){x.globalAlpha=s.a*(reduce?1:.75+.25*Math.sin(t/900+s.t));x.fillStyle=fg;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill();}
     if(!reduce){
@@ -565,8 +571,8 @@ function sky(){
       mets=mets.filter(m=>t-m.t0<m.dur);
       for(const m of mets){const k=(t-m.t0)/m.dur, len=m.len, hx=m.x-k*m.len*1.9, hy=m.y+k*m.len*1.25;
         const g=x.createLinearGradient(hx,hy,hx+len*.84,hy-len*.55);g.addColorStop(0,m.c);g.addColorStop(1,"transparent");
-        x.globalAlpha=Math.sin(k*Math.PI);x.shadowColor=m.c;x.shadowBlur=14;x.strokeStyle=g;x.lineWidth=m.w;x.beginPath();x.moveTo(hx,hy);x.lineTo(hx+len*.84,hy-len*.55);x.stroke();
-        x.fillStyle="#fff";x.beginPath();x.arc(hx,hy,m.w*.9,0,7);x.fill();x.shadowBlur=0;}
+        x.globalAlpha=Math.sin(k*Math.PI);x.strokeStyle=g;x.lineWidth=m.w;x.beginPath();x.moveTo(hx,hy);x.lineTo(hx+len*.84,hy-len*.55);x.stroke();
+        x.fillStyle="#fff";x.beginPath();x.arc(hx,hy,m.w*.9,0,7);x.fill();}
       skyRAF=requestAnimationFrame(frame);
     }
     x.globalAlpha=1;
@@ -578,15 +584,15 @@ function sky(){
 (function(){
   const c=$("night"), x=c.getContext("2d");
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isNight=()=>getComputedStyle(document.documentElement).getPropertyValue("--night").trim()==="1";
-  let W=0,H=0,dpr=1,layers=[],mets=[],last=0,burstAt=0,raf=0,warpAt=0;
+  const isNight=()=>NIGHT;
+  let W=0,H=0,dpr=1,layers=[],mets=[],last=0,burstAt=0,raf=0,warpAt=0,prev=0,nebC=null;
   const TEAL=[67,199,202], CORAL=[255,122,92], WHITE=[232,238,240];
   const rgba=(c,a)=>`rgba(${c[0]},${c[1]},${c[2]},${a})`;
   function size(){
-    dpr=Math.min(2,devicePixelRatio||1); W=innerWidth; H=innerHeight;
+    dpr=1; W=innerWidth; H=innerHeight;
     c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0);
     const area=W*H;
-    layers=[[.06,area/2200,.6],[.18,area/7000,1.1],[.38,area/26000,1.8]].map(([sp,n,r])=>({sp,stars:Array.from({length:Math.round(n)},()=>({x:Math.random()*W,y:Math.random()*H*2,r:Math.random()*r+.25,a:Math.random()*.6+.25,t:Math.random()*6,tint:Math.random()<.12?TEAL:Math.random()<.08?CORAL:WHITE}))}));
+    layers=[[.06,area/2200,.6],[.18,area/7000,1.1],[.38,area/26000,1.8]].map(([sp,n,r])=>({sp,stars:Array.from({length:Math.round(n)},()=>({x:Math.random()*W,y:Math.random()*H*2,r:Math.random()*r+.25,a:Math.random()*.6+.25,t:Math.random()*6,tint:Math.random()<.12?TEAL:Math.random()<.08?CORAL:WHITE})).map(s=>(s.fs=rgba(s.tint,1),s))}));
   }
   const neb=[{c:TEAL,x:.85,y:.08,r:.75,sx:.00005,sy:.00007,p:0},{c:CORAL,x:.05,y:.92,r:.7,sx:.00006,sy:.00004,p:2},{c:[120,90,220],x:.55,y:.5,r:.55,sx:.00004,sy:.00005,p:4}];
   function shoot(px,py,big){
@@ -597,18 +603,9 @@ function sky(){
   function frame(t){
     raf=0;
     if(!isNight()){x.clearRect(0,0,W,H);return;}
+    if(!reduce&&t-prev<25&&!warpAt){raf=requestAnimationFrame(frame);return;} prev=t;
     const sy=scrollY;
     x.clearRect(0,0,W,H);
-    // nebula drifting slowly
-    x.globalCompositeOperation="lighter";
-    for(const n of neb){
-      const k=reduce?0:t;
-      const cx=(n.x+Math.sin(k*n.sx+n.p)*.08)*W, cy=(n.y+Math.cos(k*n.sy+n.p)*.06)*H-sy*.04;
-      const R=n.r*Math.max(W,H), g=x.createRadialGradient(cx,cy,0,cx,cy,R);
-      const pulse=reduce?1:.85+.15*Math.sin(k*.0004+n.p);
-      g.addColorStop(0,rgba(n.c,.20*pulse)); g.addColorStop(.45,rgba(n.c,.07*pulse)); g.addColorStop(1,rgba(n.c,0));
-      x.fillStyle=g; x.fillRect(0,0,W,H);
-    }
     // stars, deeper layers move slower on scroll; during a warp they stretch toward the edges
     const wk=warpAt?Math.max(0,1-(performance.now()-warpAt)/900):0, wv=wk>0?Math.sin(wk*Math.PI):0;
     for(const L of layers){
@@ -616,11 +613,11 @@ function sky(){
       for(const s of L.stars){
         let y=s.y-off; if(y<-4) y+=H*2; if(y>H+4) continue;
         const tw=reduce?1:.55+.45*Math.sin(t/700+s.t);
-        x.globalAlpha=s.a*tw; x.fillStyle=rgba(s.tint,1);
-        if(wv>.02){ const dx=s.x-W/2, dy=y-H/2, k=wv*(.25+L.sp*2.2); x.globalAlpha=Math.min(1,s.a*1.6); x.strokeStyle=rgba(s.tint,1); x.lineWidth=s.r*1.3; x.beginPath(); x.moveTo(s.x,y); x.lineTo(s.x+dx*k,y+dy*k); x.stroke(); continue; }
+        x.globalAlpha=s.a*tw; x.fillStyle=s.fs;
+        if(wv>.02){ const dx=s.x-W/2, dy=y-H/2, k=wv*(.25+L.sp*2.2); x.globalAlpha=Math.min(1,s.a*1.6); x.strokeStyle=s.fs; x.lineWidth=s.r*1.3; x.beginPath(); x.moveTo(s.x,y); x.lineTo(s.x+dx*k,y+dy*k); x.stroke(); continue; }
         x.beginPath(); x.arc(s.x,y,s.r,0,7); x.fill();
         if(s.r>1.6&&tw>.9){ // cross glint on the brightest
-          x.globalAlpha=(tw-.9)*6*s.a; x.strokeStyle=rgba(s.tint,1); x.lineWidth=.6;
+          x.globalAlpha=(tw-.9)*6*s.a; x.strokeStyle=s.fs; x.lineWidth=.6;
           x.beginPath(); x.moveTo(s.x-s.r*5,y); x.lineTo(s.x+s.r*5,y); x.moveTo(s.x,y-s.r*5); x.lineTo(s.x,y+s.r*5); x.stroke();
         }
       }
@@ -637,25 +634,25 @@ function sky(){
         const nx=-m.vx, ny=-m.vy, nl=Math.hypot(nx,ny)||1, tx=hx+nx/nl*m.len, ty=hy+ny/nl*m.len;
         const g=x.createLinearGradient(hx,hy,tx,ty); g.addColorStop(0,rgba(m.c,1)); g.addColorStop(.3,rgba(m.c,.45)); g.addColorStop(1,rgba(m.c,0));
         const a=Math.sin(Math.min(1,k)*Math.PI);
-        x.globalAlpha=a; x.shadowColor=rgba(m.c,1); x.shadowBlur=18; x.strokeStyle=g; x.lineWidth=m.w; x.lineCap="round";
-        x.beginPath(); x.moveTo(hx,hy); x.lineTo(tx,ty); x.stroke();
-        x.shadowBlur=24; x.fillStyle="#fff"; x.beginPath(); x.arc(hx,hy,m.w*1.1,0,7); x.fill();
+        x.lineCap="round"; x.strokeStyle=g;
+        x.globalAlpha=a*.22; x.lineWidth=m.w*5; x.beginPath(); x.moveTo(hx,hy); x.lineTo(tx,ty); x.stroke();
+        x.globalAlpha=a; x.lineWidth=m.w; x.beginPath(); x.moveTo(hx,hy); x.lineTo(tx,ty); x.stroke();
+        x.globalAlpha=a*.35; x.fillStyle=rgba(m.c,1); x.beginPath(); x.arc(hx,hy,m.w*4,0,7); x.fill();
+        x.globalAlpha=a; x.fillStyle="#fff"; x.beginPath(); x.arc(hx,hy,m.w*1.1,0,7); x.fill();
         if(m.w>2){ // big ones shed sparks
           for(let i=0;i<3;i++){const q=Math.random()*.35; x.globalAlpha=a*(1-q*2); x.fillStyle=rgba(m.c,1); x.beginPath(); x.arc(hx+(tx-hx)*q+(Math.random()-.5)*6,hy+(ty-hy)*q+(Math.random()-.5)*6,.9,0,7); x.fill();}
         }
-        x.shadowBlur=0;
       }
       x.globalAlpha=1;
     }
-    x.globalCompositeOperation="source-over";
+    if(warpAt&&performance.now()-warpAt>900) warpAt=0;
     if(!reduce) raf=requestAnimationFrame(frame);
   }
   const start=()=>{ if(!raf) raf=requestAnimationFrame(frame); };
   size(); burstAt=performance.now(); start();
   addEventListener("resize",()=>{size(); if(reduce) start();});
   if(reduce) addEventListener("scroll",start,{passive:true});
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{burstAt=performance.now(); start();});
-  new MutationObserver(()=>{burstAt=performance.now(); start();}).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+  onTheme(()=>{burstAt=performance.now(); start(); if($("sky")&&!NIGHT&&!skyRAF) sky();});
   document.addEventListener("pointerdown",e=>{ if(!isNight()||reduce||e.target.closest("a,button,summary,input")) return; shoot(e.clientX+60,e.clientY-40,true); start(); });
   document.addEventListener("visibilitychange",()=>{ if(!document.hidden) start(); });
   addEventListener("hashchange",()=>{ if(!reduce&&isNight()){ warpAt=performance.now(); start(); } });
