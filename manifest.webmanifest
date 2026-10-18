@@ -3,7 +3,7 @@
  "short_name": "COSMOS BOYS",
  "start_url": "./",
  "scope": "./",
- "display": "browser",
+ "display": "standalone",
  "background_color": "#06090D",
  "theme_color": "#06090D",
  "icons": [
