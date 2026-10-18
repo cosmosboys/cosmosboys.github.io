@@ -1,0 +1,683 @@
+<title>COSMOS BOYS Official</title>
+<meta name="description" content="宇宙の尺度に、胸の奥の感情を重ねる。横浜・みなとみらいを舞台に「宇宙 × 友情 × 挑戦」を掲げる個人プロジェクト、Cosmos Boysの公式サイト。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="COSMOS BOYS Official">
+<meta property="og:title" content="COSMOS BOYS Official">
+<meta property="og:description" content="宇宙の尺度に、胸の奥の感情を重ねる。">
+<meta property="og:url" content="https://cosmosboys.github.io/">
+<meta property="og:image" content="https://cosmosboys.github.io/img/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#06090D">
+<link rel="canonical" href="https://cosmosboys.github.io/">
+<link rel="icon" href="img/logo.png">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* layout: night-sky official site. sticky wordmark bar, one route visible at a time, wide expanded English display over small Japanese labels, jackets carry the colour */
+:root{
+  --bg:#06090D; --bg2:#0D141B; --fg:#E8EEF0; --mute:#8D9AA3; --line:rgba(232,238,240,.14);
+  --teal:#43C7CA; --coral:#FF7A5C; --card:#0F1820;
+  --night:1; --glow-t:0 0 22px rgba(67,199,202,.55),0 0 2px rgba(232,238,240,.7); --glow-c:0 0 18px rgba(255,122,92,.6); --glow-img:0 0 0 1px rgba(67,199,202,.25),0 0 48px -6px rgba(67,199,202,.45),0 30px 60px -30px rgba(0,0,0,.8); --hero-bg:transparent;
+  --disp:"Archivo","Arial Black",system-ui,sans-serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+  --mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#EEF2F2; --bg2:#E2EAEA; --fg:#0B1116; --mute:#55636B; --line:rgba(11,17,22,.14);
+  --teal:#07767B; --coral:#C6432A; --card:#FFFFFF; --night:0; --glow-t:none; --glow-c:none; --glow-img:0 18px 40px -18px rgba(0,0,0,.35); --hero-bg:var(--bg); color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#EEF2F2; --bg2:#E2EAEA; --fg:#0B1116; --mute:#55636B; --line:rgba(11,17,22,.14);
+  --teal:#07767B; --coral:#C6432A; --card:#FFFFFF; --night:0; --glow-t:none; --glow-c:none; --glow-img:0 18px 40px -18px rgba(0,0,0,.35); --hero-bg:var(--bg); color-scheme:light}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.8;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+
+/* header */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark{width:26px;height:31px;background:var(--fg);-webkit-mask:url(img/logo.png) center/contain no-repeat;mask:url(img/logo.png) center/contain no-repeat}
+.brand b{font-family:var(--disp);font-stretch:125%;font-weight:800;font-size:15px;letter-spacing:.08em}
+.nav{display:none;gap:26px}
+.nav a{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.2em;text-decoration:none;color:var(--mute);padding:6px 0}
+.nav a[aria-current="page"]{color:var(--fg);box-shadow:inset 0 -2px var(--coral)}
+.menu-btn{display:flex;align-items:center;gap:10px;background:none;border:0;padding:10px 0;cursor:pointer;font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.2em}
+.menu-btn i{display:grid;gap:5px;width:22px}
+.menu-btn i::before,.menu-btn i::after{content:"";height:1.5px;background:currentColor;display:block}
+@media (min-width:860px){.nav{display:flex}.menu-btn{display:none}}
+
+/* full-screen menu */
+.sheet{position:fixed;inset:0;z-index:50;background:var(--bg);overflow-y:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+.sheet .top{display:flex;justify-content:space-between;align-items:center;height:60px}
+.close{background:none;border:0;cursor:pointer;font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.2em;padding:10px 0}
+.sheet nav{display:grid;margin-top:18px;border-top:1px solid var(--line)}
+.sheet nav a{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.sheet nav a b{font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:clamp(30px,9vw,48px);line-height:1;letter-spacing:.01em}
+.sheet nav a span{font-size:12px;color:var(--mute);letter-spacing:.12em;font-weight:700}
+.sheet nav a[aria-current="page"] b{color:var(--coral)}
+.sheet .sub{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin-top:28px;font-size:13px}
+.sheet .sub a{color:var(--mute);text-decoration:none;padding:6px 0}
+
+/* section scaffolding */
+main{min-height:70vh}
+.view{padding-block:0 72px}
+.sec{display:grid;gap:22px;padding-top:64px}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1px solid var(--fg);padding-bottom:12px}
+.sh h2{display:grid;gap:4px}
+.en{text-shadow:var(--glow-t);font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:clamp(26px,7.2vw,44px);line-height:.95;letter-spacing:.005em}
+.jp{font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--mute)}
+.more{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:11px;letter-spacing:.2em;text-decoration:none;color:var(--fg);white-space:nowrap;padding:6px 0;border-bottom:1px solid var(--fg)}
+.pagehead{padding-top:44px;display:grid;gap:10px}
+.pagehead .en{font-size:clamp(40px,11vw,76px)}
+.lede{color:var(--mute);font-size:14px;max-width:38em}
+.btn{max-width:100%;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 18px;border:1px solid var(--fg);text-decoration:none;font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.18em;background:none;cursor:pointer}
+.btn.solid{background:var(--fg);color:var(--bg)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.tag{display:inline-block;font-family:var(--disp);font-stretch:100%;font-weight:700;font-size:11px;letter-spacing:.16em;border:1px solid currentColor;padding:1px 7px;line-height:1.6}
+.tag.rel{color:var(--teal)} .tag.chart{color:var(--coral)} .tag.info{color:var(--mute)} .tag.soon{color:var(--coral)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--hero-bg)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:30px;padding-block:40px 36px}
+.hero .loc{font-family:var(--disp);font-stretch:100%;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute)}
+.hero h1{text-shadow:var(--glow-t);font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:clamp(50px,14.5vw,124px);line-height:.84;letter-spacing:-.005em}
+.hero h1 span{display:block}
+.hero .tl{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.24em;margin-top:16px}
+.hero .tl em{font-style:normal;color:var(--coral);text-shadow:var(--glow-c)}
+.next{display:grid;grid-template-columns:minmax(0,148px) 1fr;gap:18px;align-items:center;text-decoration:none;padding-top:22px;border-top:1px solid var(--line)}
+.next img{width:100%;aspect-ratio:1;object-fit:cover;box-shadow:var(--glow-img)}
+.next .k{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.24em;color:var(--teal)}
+.next .t{font-family:var(--disp);font-stretch:105%;font-weight:800;font-size:clamp(20px,5.4vw,32px);line-height:1.08;margin-top:6px;text-wrap:balance}
+.next .d{display:flex;align-items:baseline;gap:14px;margin-top:10px;flex-wrap:wrap}
+.next .d b{font-family:var(--disp);font-stretch:85%;font-weight:700;font-size:15px;letter-spacing:.06em}
+.next .d span{font-size:12.5px;color:var(--mute)}
+.count{display:flex;align-items:baseline;gap:8px;margin-top:8px;font-family:var(--disp);font-stretch:75%}
+.count b{text-shadow:var(--glow-t);font-weight:800;font-size:40px;line-height:1;color:var(--fg)}
+.count span{font-weight:700;font-size:11px;letter-spacing:.2em;color:var(--mute)}
+.next{max-width:760px}
+@media (min-width:860px){.next{grid-template-columns:200px 1fr;gap:28px}}
+
+/* lists */
+.nl li{border-bottom:1px solid var(--line)}
+.nl a{display:grid;grid-template-columns:84px 1fr 12px;gap:4px 14px;align-items:start;padding:16px 0;text-decoration:none}
+.nl .d{font-family:var(--disp);font-stretch:80%;font-weight:700;font-size:14px;letter-spacing:.04em;font-variant-numeric:tabular-nums;line-height:1.5}
+.nl .d small{display:block;font-size:11px;color:var(--mute);letter-spacing:.14em}
+.nl .t{display:block;font-weight:700;font-size:15px;line-height:1.55;margin-top:4px}
+.nl .n{display:block;font-size:12.5px;color:var(--mute);line-height:1.6}
+.nl .go{align-self:center;width:8px;height:8px;border-top:1.5px solid var(--mute);border-right:1.5px solid var(--mute);transform:rotate(45deg)}
+
+/* release grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}
+@media (min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:960px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.rc{display:grid;gap:10px;text-decoration:none}
+.rc .im{position:relative;aspect-ratio:1;overflow:hidden;background:var(--bg2)}
+.rc img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.rc:hover img{transform:scale(1.03)}
+.rc .meta{display:grid;gap:3px}
+.rc .t{font-weight:700;font-size:14px;line-height:1.4}
+.rc .s{font-family:var(--disp);font-stretch:85%;font-weight:600;font-size:12px;letter-spacing:.08em;color:var(--mute)}
+.rc .badge{position:absolute;left:8px;top:8px;background:var(--bg);color:var(--coral);font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.16em;padding:2px 8px}
+
+.latest{display:grid;grid-template-columns:minmax(0,150px) 1fr;gap:18px;align-items:start}
+.latest img{width:100%;aspect-ratio:1;object-fit:cover}
+.latest .lt{font-family:var(--disp);font-stretch:105%;font-weight:800;font-size:clamp(20px,5.6vw,30px);line-height:1.1;margin-top:8px;text-wrap:balance}
+.latest .btns{grid-column:1/-1}
+@media (min-width:860px){.latest{grid-template-columns:300px 1fr;grid-template-rows:auto 1fr;column-gap:36px;row-gap:22px}.latest>a{grid-row:1/3}.latest .btns{grid-column:2;align-self:start}}
+/* ranking */
+.rank li{border-bottom:1px solid var(--line)}
+.rank a{display:grid;grid-template-columns:40px 56px 1fr 12px;gap:14px;align-items:center;padding:12px 0;text-decoration:none}
+.rank .rn{font-family:var(--disp);font-stretch:80%;font-weight:800;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.rank li:first-child .rn{color:var(--coral)}
+.rank img{width:56px;height:56px;object-fit:cover}
+.rank .t{font-weight:700;font-size:15px;line-height:1.4;min-width:0}
+.rank .go{width:8px;height:8px;border-top:1.5px solid var(--mute);border-right:1.5px solid var(--mute);transform:rotate(45deg)}
+/* release page */
+.rel-hero{display:grid;gap:26px;padding-top:28px}
+.crumb{font-size:12px;color:var(--mute);display:flex;gap:8px;align-items:center}
+.crumb a{text-decoration:none;color:var(--mute)}
+.rel-hero .cv{width:min(100%,520px);aspect-ratio:1;object-fit:cover;box-shadow:var(--glow-img)}
+.rel-hero h1{font-family:var(--disp);font-stretch:110%;font-weight:900;font-size:clamp(28px,8vw,52px);line-height:1;text-wrap:balance}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+.facts div{padding:12px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.22em;color:var(--mute)}
+.facts dd{margin:2px 0 0;font-weight:700;font-size:14px;line-height:1.5}
+.facts dd.ph{color:var(--teal)}
+@media (min-width:860px){.rel-hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:48px}}
+.story{display:grid;gap:14px;max-width:40em}
+.story h3{font-family:var(--mincho);font-weight:800;font-size:clamp(22px,6vw,30px);line-height:1.45;text-wrap:balance}
+.story p{font-size:15.5px;line-height:2}
+.tracks li{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line)}
+.tracks .no{font-family:var(--disp);font-stretch:75%;font-weight:700;color:var(--mute);font-variant-numeric:tabular-nums}
+.tracks .nm{font-weight:700;font-size:14.5px;line-height:1.45}
+.tracks .ph{display:block;font-size:12px;color:var(--teal);font-weight:500}
+.tracks button{background:none;border:0;padding:0;color:var(--mute);font-size:12px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.tstory{grid-column:2/-1;display:grid;gap:8px;padding:6px 0 4px}
+.tstory h4{margin:0;font-family:var(--mincho);font-weight:800;font-size:18px;line-height:1.5}
+.tstory p{font-size:14.5px;line-height:1.95}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.pn a{display:grid;gap:4px;padding:14px;border:1px solid var(--line);text-decoration:none;min-width:0}
+.pn a:last-child{text-align:right}
+.pn small{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.2em;color:var(--mute)}
+.pn span{font-weight:700;font-size:13.5px;line-height:1.4;overflow-wrap:anywhere}
+
+/* chapter1 */
+.c1{display:grid;gap:12px}
+.c1 details{border-bottom:1px solid var(--line)}
+.c1 summary{list-style:none;display:grid;grid-template-columns:96px 1fr auto;gap:12px;align-items:baseline;padding:14px 0;cursor:pointer}
+.c1 summary::-webkit-details-marker{display:none}
+.c1 summary b{font-family:var(--disp);font-stretch:110%;font-weight:800;font-size:16px;letter-spacing:.06em}
+.c1 summary small{font-family:var(--disp);font-stretch:85%;font-weight:600;font-size:12px;color:var(--mute);letter-spacing:.06em}
+.c1 summary i{font-style:normal;color:var(--mute);font-size:18px;line-height:1}
+.c1 details[open] summary i{transform:rotate(45deg)}
+.c1 ol{padding:0 0 16px 108px;display:grid;gap:4px;font-size:14px;counter-reset:c}
+.c1 ol li{counter-increment:c}
+.c1 ol li::before{content:counter(c)". ";color:var(--mute);font-family:var(--disp);font-stretch:80%}
+.c1 .bc{margin:0 0 18px 108px}
+@media (max-width:420px){.c1 summary{grid-template-columns:80px 1fr auto}.c1 ol,.c1 .bc{margin-left:0;padding-left:92px}.c1 .bc{padding-left:0;margin-left:92px}}
+
+.c1all{display:grid;gap:14px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.c1n{display:flex;align-items:baseline;gap:10px}
+.c1n b{font-family:var(--disp);font-stretch:85%;font-weight:800;font-size:44px;line-height:1;text-shadow:var(--glow-t)}
+.c1n span{font-family:var(--disp);font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--mute)}
+.c1t{font-family:var(--disp);font-stretch:100%;font-weight:700;font-size:13px;letter-spacing:.12em;line-height:1.9;color:var(--mute)}
+/* about */
+.about-grid{display:grid;gap:40px}
+@media (min-width:860px){.about-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:56px}}
+.prose{display:grid;gap:16px;max-width:40em}
+.prose p{font-size:15.5px;line-height:2}
+.prose .big{font-family:var(--mincho);font-weight:800;font-size:clamp(20px,5.6vw,28px);line-height:1.7}
+/* three themes drawn as overlapping orbits; the band sits where all three meet */
+.axis{display:grid;justify-items:center;gap:14px;padding-block:8px}
+.axis svg{width:min(100%,420px);height:auto;overflow:visible}
+.axis circle{fill-opacity:.16;stroke-width:1.2;mix-blend-mode:screen}
+.axis .c1{fill:var(--teal);stroke:var(--teal)} .axis .c2{fill:var(--coral);stroke:var(--coral)} .axis .c3{fill:#8A6BE0;stroke:#8A6BE0}
+.axis .w{font-family:var(--disp);font-stretch:110%;font-weight:800;font-size:17px;letter-spacing:.12em;fill:var(--fg);text-anchor:middle}
+.axis .j{font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.2em;fill:var(--mute);text-anchor:middle}
+.axis .core{fill:var(--fg)}
+.axis .eq{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.24em;color:var(--mute);text-align:center}
+.axis .eq b{color:var(--coral);font-weight:700;margin:0 .5em}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .axis circle{mix-blend-mode:multiply;fill-opacity:.12}}
+:root[data-theme="light"] .axis circle{mix-blend-mode:multiply;fill-opacity:.12}
+.chap{display:grid;gap:0}
+.chap article{display:grid;gap:8px;padding:20px 0;border-bottom:1px solid var(--line)}
+.chap h3{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.chap h3 b{font-family:var(--disp);font-stretch:110%;font-weight:900;font-size:24px;letter-spacing:.04em}
+.chap h3 small{font-family:var(--disp);font-stretch:85%;font-weight:600;font-size:12.5px;color:var(--mute);letter-spacing:.06em}
+.chap p{font-size:14.5px;line-height:1.95;max-width:40em}
+
+/* stories */
+.stories{display:grid;gap:0}
+.sto{display:grid;gap:12px;padding:24px 0;border-bottom:1px solid var(--line);max-width:40em}
+.sto-h{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;font-size:14px}
+.sto-h img{width:48px;height:48px;object-fit:cover}
+.sto h3{font-family:var(--mincho);font-weight:800;font-size:clamp(20px,5.4vw,26px);line-height:1.5;text-wrap:balance}
+.sto p{font-size:15px;line-height:2}
+/* video */
+.vg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+@media (min-width:860px){.vg{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vc{display:grid;gap:10px;text-decoration:none}
+.vc .im{position:relative;aspect-ratio:1;overflow:hidden;background:var(--bg2)}
+.vc img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) brightness(.82)}
+.vc .play{position:absolute;inset:auto 10px 10px auto;width:40px;height:40px;border-radius:50%;background:var(--fg);display:grid;place-items:center}
+.vc .play::after{content:"";margin-left:3px;border-left:12px solid var(--bg);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.vc .t{font-weight:700;font-size:14px;line-height:1.4}
+.vc .s{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.18em;color:var(--mute)}
+
+
+/* article */
+.art{display:grid;gap:16px;padding-top:28px;max-width:720px}
+.art .meta{display:flex;gap:12px;align-items:center;font-family:var(--disp);font-stretch:85%;font-weight:700;font-size:14px;letter-spacing:.04em}
+.art h1{font-family:var(--mincho);font-weight:800;font-size:clamp(24px,6.6vw,36px);line-height:1.45;text-wrap:balance}
+.art .sum{color:var(--mute);font-size:13.5px}
+.art .cv{width:min(100%,360px);aspect-ratio:1;object-fit:cover;margin-top:6px}
+.art .body{display:grid;gap:14px;border-top:1px solid var(--fg);padding-top:20px}
+.art .body p{font-size:15.5px;line-height:2}
+
+/* full-page night sky, dark mode only */
+#night{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:none}
+main,.foot{position:relative;z-index:1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #night{display:block}}
+:root[data-theme="dark"] #night{display:block}
+/* the purple three-eyed cat sits on the footer edge, looking up at the sky; tap and it turns around */
+.catwrap{position:relative}
+.cat{position:absolute;right:max(18px,env(safe-area-inset-right,0px));top:-48px;transform:translateY(-100%);width:24px;height:56px;padding:0;border:0;background:none;cursor:pointer}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom;transition:opacity .25s,transform .25s}
+.cat .cf{opacity:0;transform:scale(.96)}
+.cat.turn .cb{opacity:0}.cat.turn .cf{opacity:1;transform:none}
+.cat:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+@media (min-width:860px){.cat{width:28px;height:64px}}
+/* ===== space reveal. hidden states apply only once the script has armed it (html.rv-on) =====
+   letters ignite like stars in random order / a comet draws each heading rule /
+   jackets come out from behind an eclipse / text arrives doppler-shifted and settles */
+.rv-on .rv-ch{display:inline-block;opacity:0;transform:scale(.15);filter:blur(5px) brightness(3);transition:opacity .35s,transform .9s cubic-bezier(.16,1.3,.3,1),filter 1s;transition-delay:calc(var(--r)*70ms)}
+.rv-on .in .rv-ch{opacity:1;transform:none;filter:none}
+.rv-host{position:relative}
+.rv-on .sh.rv{position:relative;border-bottom-color:transparent;background:linear-gradient(90deg,transparent,var(--fg) 30%) left bottom/0% 1px no-repeat;transition:background-size 1.2s cubic-bezier(.5,0,.2,1) .2s}
+.rv-on .sh.rv.in{background-size:100% 1px}
+.rv-on .sh.rv::after{content:"";position:absolute;left:0;bottom:-2px;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 6px 2px var(--teal),0 0 18px 6px color-mix(in srgb,var(--teal) 60%,transparent);opacity:0}
+.rv-on .sh.rv.in::after{animation:comet 1.2s cubic-bezier(.5,0,.2,1) .2s both}
+@keyframes comet{0%{left:0;opacity:0}10%{opacity:1}85%{opacity:1}100%{left:100%;opacity:0}}
+.rv-on .sh.rv .jp,.rv-on .sh.rv .more{opacity:0;letter-spacing:.6em;transition:opacity .8s .7s,letter-spacing 1s .7s cubic-bezier(.2,.8,.2,1)}
+.rv-on .sh.rv.in .jp{opacity:1;letter-spacing:.14em}.rv-on .sh.rv.in .more{opacity:1;letter-spacing:.2em}
+.rv-on .rv-img{clip-path:circle(0% at 50% 50%);filter:brightness(2.2) saturate(0);transition:clip-path 1.3s cubic-bezier(.65,0,.2,1),filter 1.6s .2s;transition-delay:calc(var(--i,0)*110ms)}
+.rv-on .rv-img.in{clip-path:circle(75% at 50% 50%);filter:none}
+.rv-on .rv-up{opacity:0;transform:translateY(18px);text-shadow:-14px 0 0 color-mix(in srgb,var(--teal) 70%,transparent),14px 0 0 color-mix(in srgb,var(--coral) 70%,transparent);transition:opacity .9s,transform 1s cubic-bezier(.2,.8,.2,1),text-shadow 1.2s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+.rv-on .rv-up.in{opacity:1;transform:none;text-shadow:0 0 0 transparent}
+.rv-on .axis.rv circle{stroke-dasharray:660;stroke-dashoffset:660;fill-opacity:0;transform-origin:200px 185px;transform:rotate(-120deg);transition:stroke-dashoffset 1.8s cubic-bezier(.6,0,.2,1),fill-opacity 1s 1.3s,transform 2s cubic-bezier(.2,.8,.2,1)}
+.rv-on .axis.rv circle.c2{transition-delay:.25s,1.5s,.25s}.rv-on .axis.rv circle.c3{transition-delay:.5s,1.7s,.5s}
+.rv-on .axis.rv.in circle{stroke-dashoffset:0;fill-opacity:.16;transform:none}
+.rv-on .axis.rv text,.rv-on .axis.rv .core{opacity:0;transition:opacity .8s 1.6s}
+.rv-on .axis.rv.in text,.rv-on .axis.rv.in .core{opacity:1}
+/* dark mode extras: each letter flares like a star igniting, jackets get a corona as the eclipse ends */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]).rv-on .in .rv-ch{animation:ignite 1.6s calc(var(--r)*70ms) both}
+ :root:not([data-theme="light"]).rv-on .rv-img.in{animation:corona 2.2s calc(var(--i,0)*110ms + .5s) both}}
+:root[data-theme="dark"].rv-on .in .rv-ch{animation:ignite 1.6s calc(var(--r)*70ms) both}
+:root[data-theme="dark"].rv-on .rv-img.in{animation:corona 2.2s calc(var(--i,0)*110ms + .5s) both}
+@keyframes ignite{0%{text-shadow:0 0 0 #fff}25%{text-shadow:0 0 4px #fff,0 0 22px #fff,0 0 44px var(--teal)}100%{text-shadow:var(--glow-t)}}
+@keyframes corona{0%{box-shadow:0 0 0 0 rgba(255,255,255,0)}30%{box-shadow:0 0 0 2px rgba(255,255,255,.7),0 0 60px 10px color-mix(in srgb,var(--coral) 55%,transparent)}100%{box-shadow:var(--glow-img)}}
+@media (prefers-reduced-motion:reduce){.rv-on .rv-ch,.rv-on .rv-img,.rv-on .rv-up,.rv-on .sh.rv,.rv-on .axis.rv circle{transition:none!important;animation:none!important;opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}}
+/* footer */
+.foot{border-top:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 82%,transparent);padding-block:48px calc(36px + env(safe-area-inset-bottom,0px))}
+.foot .cols{display:grid;gap:30px}
+@media (min-width:860px){.foot .cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.foot h3{font-family:var(--disp);font-stretch:110%;font-weight:800;font-size:12px;letter-spacing:.24em;color:var(--mute);margin-bottom:10px}
+.foot ul{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px}
+.foot a{text-decoration:none;font-size:14px;display:block;padding:7px 0}
+.foot a small{display:block;font-size:11px;color:var(--mute);line-height:1.3}
+.foot .end{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:11.5px;color:var(--mute)}
+.foot .end .mark{width:22px;height:26px;background:var(--mute)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="COSMOS BOYS ホーム"><span class="mark" aria-hidden="true"></span><b>COSMOS BOYS</b></a>
+    <nav class="nav" id="nav" aria-label="メインメニュー"></nav>
+    <button class="menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="sheet"><i aria-hidden="true"></i>MENU</button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-label="メニュー">
+  <div class="wrap">
+    <div class="top"><a class="brand" href="#home"><span class="mark" aria-hidden="true"></span><b>COSMOS BOYS</b></a><button class="close" id="menu-close" type="button">CLOSE</button></div>
+    <nav id="sheet-nav" aria-label="メニュー"></nav>
+    <div class="sub" id="sheet-sub"></div>
+  </div>
+</div>
+
+<canvas id="night" aria-hidden="true"></canvas>
+<main id="main" tabindex="-1"></main>
+
+<footer class="foot">
+  <div class="wrap catwrap"><button type="button" class="cat" id="cat" aria-label="紫の三つ目猫"><img class="cb" src="img/cat_back.png" alt=""><img class="cf" src="img/cat_front.png" alt=""></button>
+    <div class="cols">
+      <div><h3>LISTEN</h3><ul id="f-listen"></ul></div>
+      <div><h3>FOLLOW</h3><ul id="f-follow"></ul><p style="margin-top:12px;font-size:12.5px;color:var(--mute)">お問い合わせは各SNSのDMまで</p></div>
+      <div><h3>MERCH</h3><ul><li><a href="https://suzuri.jp/CosmosBoys" target="_blank" rel="noopener">SUZURI<small>Tシャツ、ステッカーほか</small></a></li></ul></div>
+    </div>
+    <div class="end"><span>&copy; 2026 Cosmos Boys / Yokohama, Minato Mirai</span><span class="mark" aria-hidden="true"></span></div>
+  </div>
+</footer>
+
+<script>
+/* ---------- data ---------- */
+const SITE={
+  next:{id:"the-grain-that-made-it-down",date:"2026-11-06",ev:"おうし座南流星群の極大の日に配信"},
+  listen:[["Spotify","https://open.spotify.com/artist/62HaDCdQ3ZQMeGwgszuurk"],["Apple Music","https://music.apple.com/jp/artist/1840386670"],["YouTube Music","https://music.youtube.com/@cosmosboys3"],["Amazon Music","https://music.amazon.co.jp/artists/B0FRG6SWMV"],["TuneCore","https://www.tunecore.co.jp/artists?id=1034827"],["Bandcamp","https://cosmosboys.bandcamp.com/"]],
+  follow:[["Instagram","https://www.instagram.com/m_cosmosboys/","@m_cosmosboys"],["YouTube","https://www.youtube.com/channel/UCk_e-l3b1g8XbOK_H6Ccmug","チャンネル"],["TikTok","https://www.tiktok.com/@cosmosboy33","@cosmosboy33"],["X","https://x.com/M_CosmosBoys","@M_CosmosBoys"]]
+};
+const IMG=id=>`img/${id.replace(/-/g,"_")}.jpg`;
+/* curated stories, checked line by line; shown only on ABOUT, never on release pages */
+const STORIES=[{"t": "Red Shift", "id": "red-shift", "h": "遠ざかる光は赤く見える", "p": ["赤方偏移。遠ざかっていく星の光が、引き伸ばされて少し赤くずれて届く現象。", "人も同じで距離ができると、本当の自分とは違う色で見られてしまう。傷つくのが怖くて離れたのに、本当は誰かと話したかった。Chapter2最初の一曲。"]}, {"t": "Don't Stop the Transit", "id": "don-t-stop-the-transit", "h": "消えたら何も残らない", "p": ["同じ場所に集まって、くだらないことで笑っていた日々。いつか連絡は減って、互いの毎日を知らなくなる。そう分かっていても、この時間を終わらせたくない。", "惑星が太陽の前を横切るトランジットは、太陽と惑星と地球が一直線に並んだときだけ起きる。たまたま重なって一緒にいられる今を、そのわずかな通過に重ねた。消えないでほしい友情を歌った曲。"]}, {"t": "APOLLO (Chapter2)", "id": "signal", "h": "君は僕のアポロだった", "p": ["アポロは人類を初めて月へ送った宇宙計画の名前で、ギリシャ神話では太陽の神の名前でもある。", "夢を一緒に追った太陽みたいな友人が、時が過ぎるにつれ少しずつ遠くへ行ってしまう。手を伸ばすこともできずさよならも言えずに、空へ昇っていくその姿を見送る歌。1stアルバム\"SIGNAL\"の3曲目。"]}, {"t": "End of the Era (Chapter2)", "id": "end-of-the-era-chapter2", "h": "これは終わりじゃない始まりの合図", "p": ["価値観の多くはある日突然変わるわけじゃない。少数派だった考えがいつの間にか多数派になり、当たり前だったものが少しずつ少数派になっていく。", "入れ替わる瞬間は誰にも分からない。だからバトンが渡されるのを待つつもりはない。壊れた扉をくぐり、彗星のような速さでその先頭を走る。その背中で、あとに続く仲間を引っ張っていく。Chapter1のEP「ODYSSEY」に入っていた曲をリメイク。"]}, {"t": "Dark Age in a Tiny World", "id": "dark-age-in-a-tiny-world", "h": "Not Fake", "p": ["宇宙が生まれてしばらくの間、星はひとつもなかった。あったのは、水兵リーベで覚える最初の3つ、水素とヘリウムとリチウムくらい。最初の星ができるまで1億年以上続いた暗闇がダークエイジ。", "夢はあるのに、まだ何も始められていない。うまくいかない理由を誰かのせいにして、言い訳と悪口でごまかしてきた。偽物の自分と向き合ったとき、暗闇の中で何かが変わり始める。"]}];
+const SIGNAL_TR=["Oi! Mr. Fermi","Parallax","APOLLO (Chapter2)","Rogue Planet","Astronaut (Chapter2)","What You Want","Don't Stop the Transit","Spring Tide","Star Sign (Chapter2)","589nm","The Balance","Red Shift","Telescope (Chapter2)","Parker Spiral","Stellar Wind"];
+const REL=[
+  {id:"the-grain-that-made-it-down",d:"2026-11-06",ty:"SINGLE",t:"The Grain That Made It Down",soon:1},
+  {id:"dark-age-in-a-tiny-world",d:"2026-10-09",ty:"SINGLE",t:"Dark Age in a Tiny World",u:"https://linkco.re/3cdxr3hX?lang=ja",mv:"https://youtu.be/YMWsYgi7nFE"},
+  {id:"end-of-the-era-chapter2",d:"2026-09-25",ty:"SINGLE",t:"End of the Era (Chapter2)",u:"https://linkco.re/9xpFMzH1?lang=ja",mv:"https://youtu.be/WbG4fOku38U"},
+  {id:"pale-summer-blue",d:"2026-08-22",ty:"SINGLE",t:"Pale Summer Blue",u:"https://linkco.re/eVm2ufDU?lang=ja"},
+  {id:"the-sun-just-won",d:"2026-08-15",ty:"SINGLE",t:"The Sun Just Won",u:"https://linkco.re/RgasQQE7?lang=ja",note:"iTunes パンク トップソング最高8位"},
+  {id:"echo-of-summer",d:"2026-08-08",ty:"SINGLE",t:"Echo Of Summer",u:"https://linkco.re/n244v0R3?lang=ja"},
+  {id:"signal",d:"2026-07-07",ty:"ALBUM",t:"SIGNAL",u:"https://linkco.re/6svATF8u?lang=ja",tr:SIGNAL_TR,note:"iTunes オルタナティブ トップアルバム最高10位"},
+  {id:"don-t-stop-the-transit",d:"2026-05-12",ty:"SINGLE",t:"Don't Stop the Transit",u:"https://linkco.re/u84CDTUF?lang=ja",mv:"https://youtu.be/M0qo49FEHYk"},
+  {id:"rogue-planet",d:"2026-05-05",ty:"SINGLE",t:"Rogue Planet",u:"https://linkco.re/94uqUCX1?lang=ja",mv:"https://youtu.be/tn5OmB6QzTk"},
+  {id:"parallax",d:"2026-04-28",ty:"SINGLE",t:"Parallax",u:"https://linkco.re/Tbff67A0?lang=ja",mv:"https://youtu.be/-qX8CEX0sAM"},
+  {id:"the-balance",d:"2026-04-21",ty:"SINGLE",t:"The Balance",u:"https://linkco.re/2Ty9zhDD?lang=ja",mv:"https://youtu.be/MBsdrL0Bb2o"},
+  {id:"spring-tide",d:"2026-04-14",ty:"SINGLE",t:"Spring Tide",u:"https://linkco.re/f2ppd6N3?lang=ja",mv:"https://youtu.be/q04r788R18E"},
+  {id:"red-shift",d:"2026-04-07",ty:"SINGLE",t:"Red Shift",u:"https://linkco.re/TDfe3NdB?lang=ja",mv:"https://youtu.be/eVYxHF1yHl4"}
+];
+const CH1=[
+  ["ETERNITY","2026-03-03",["オーロラ","シンギュラリティ","星屑の未来図","Albedo","プラネタリウム"],"https://cosmosboys.bandcamp.com/album/eternity-2"],
+  ["UNPLUGGED","2026-02-20",["アストロノート (Acoustic)","相対性理論 (Acoustic)","イクリプス (Acoustic)","青点 (Acoustic)","アポロ (Acoustic)"],"https://cosmosboys.bandcamp.com/album/unplugged"],
+  ["ODYSSEY","2026-02-04",["End of the Era","アステリズム","ビッグバン","チャンドラセカール","Next Story"],"https://cosmosboys.bandcamp.com/album/odyssey"],
+  ["EXIT","2026-01-09",["カーマンライン","ロシュリミット","Chasing The Lights","Neptune Diamonds","シジジー"],"https://cosmosboys.bandcamp.com/album/exit"],
+  ["REFRACTION","2025-12-10",["Beautiful Error","枕元の天体望遠鏡","Lupus 1006","自分のため","プラズマ"],"https://cosmosboys.bandcamp.com/album/refraction"],
+  ["NOSTALGIA","2025-11-13",["アストロノート","Moving On","Running, Running","Pulsar","アンドロメダ"],"https://cosmosboys.bandcamp.com/album/nostalgia"],
+  ["UNIVERSE","2025-10-29",["Felt Like a Supernova","Blue Moon","ベテルギウス","この声が届くまで","Now The World Can Hear My Name"],"https://cosmosboys.bandcamp.com/album/universe"],
+  ["GALAXY","2025-10-07",["Summer's End","青点","Bound Together Strong","アポロ","Gravity, let me go"],"https://cosmosboys.bandcamp.com/album/galaxy"],
+  ["COSMOS","2025-09-27",["アストロイド","サテライト","テレスコープ","プロミネンス","相対性理論"],"https://cosmosboys.bandcamp.com/album/cosmos"]
+];
+/* most played Chapter2 songs, all services combined; order only, no counts */
+const RANK=[["Rogue Planet","rogue-planet"],["Parallax","parallax"],["Don't Stop the Transit","don-t-stop-the-transit"],["Red Shift","red-shift"],["APOLLO (Chapter2)","signal"]];
+const NEWS=[
+  {id:"darkage",d:"2026-10-09",k:"rel",t:"Dark Age in a Tiny World 配信開始",n:"宇宙の暗黒時代がモチーフのシングル",rel:"dark-age-in-a-tiny-world",
+   body:["シングルDark Age in a Tiny Worldの配信が始まりました。","モチーフは宇宙の暗黒時代。最初の星が生まれる前の、光のない時代のことです。動けないまま野心だけが膨らんで、やがて不安に変わっていく。そんな気持ちを、スポークン・ワードとハードコアで描いています。"],
+   links:[["配信サービスで聴く","https://linkco.re/3cdxr3hX?lang=ja"],["MVを見る","https://youtu.be/YMWsYgi7nFE"]]},
+  {id:"endofera",d:"2026-09-25",k:"rel",t:"End of the Era (Chapter2) 配信開始",n:"Chapter1の曲を作り直したシングル",rel:"end-of-the-era-chapter2",
+   body:["シングルEnd of the Era (Chapter2)の配信が始まりました。Chapter1のEP、ODYSSEYに入っていた曲を、歌詞と歌い方とサウンドから作り直しています。","古い価値観が、新しい世代に自然と押し出されていく。時代の移り変わりを歌った曲です。"],
+   links:[["配信サービスで聴く","https://linkco.re/9xpFMzH1?lang=ja"],["MVを見る","https://youtu.be/WbG4fOku38U"]]},
+  {id:"ch1",d:"2026-09-24",k:"info",t:"Chapter1の配信を停止",n:"Bandcampへ移行",
+   body:["2025年9月から2026年3月までに出したChapter1の音源の配信を、各配信サービスで終了しました。","Chapter1の曲はこれからもBandcampで聴けます。Chapter1の曲の一部は、Chapter2として作り直していきます。"],
+   links:[["Bandcampで聴く","https://cosmosboys.bandcamp.com/"]]},
+  {id:"sunchart",d:"2026-08",k:"chart",t:"The Sun Just WonがiTunesチャートイン",n:"パンク トップソングで最高8位",rel:"the-sun-just-won",
+   body:["8月15日に出したシングルThe Sun Just Wonが、iTunesのパンク トップソングで最高8位に入りました。","聴いてくれた皆さん、ありがとうございます。"],
+   links:[["配信サービスで聴く","https://linkco.re/RgasQQE7?lang=ja"]]},
+  {id:"summer3",d:"2026-08",k:"rel",t:"週次シングル3作",n:"Echo Of Summer、The Sun Just Won、Pale Summer Blue",
+   body:["8月は3週続けてシングルを出しました。","8月8日にEcho Of Summer、8月15日にThe Sun Just Won、8月22日にPale Summer Blueを配信しています。"],links:[]},
+  {id:"signalchart",d:"2026-07",k:"chart",t:"SIGNALがiTunesチャートイン",n:"オルタナティブ トップアルバムで最高10位",rel:"signal",
+   body:["1stフルアルバムSIGNALが、iTunesのオルタナティブ トップアルバムで最高10位に入りました。","聴いてくれた皆さん、ありがとうございます。"],
+   links:[["配信サービスで聴く","https://linkco.re/6svATF8u?lang=ja"]]},
+  {id:"signal",d:"2026-07-07",k:"rel",t:"1st Full Album SIGNAL",n:"全15曲",rel:"signal",
+   body:["1stフルアルバムSIGNALをリリースしました。全15曲です。","日常の葛藤や思春期の焦りを、2000年代のポップパンク、ミッドウェストエモ、マスロックの手ざわりのバンドサウンドで描きました。遠く離れた憧れへ手を伸ばし続ける、挑戦のシグナルです。","最初の一曲には、3曲目のAPOLLO (Chapter2)がおすすめです。"],
+   links:[["配信サービスで聴く","https://linkco.re/6svATF8u?lang=ja"]]},
+  {id:"redshift",d:"2026-04-07",k:"rel",t:"Red Shift",n:"Chapter2が始まる",rel:"red-shift",
+   body:["Chapter2の始まりの一曲、Red Shiftを配信しました。ここから6週続けてシングルを出していきます。","赤方偏移は、遠ざかっていく星の光が引き伸ばされて、少し赤くずれて届く現象。距離ができると、本当の自分とは違う色で見られてしまう。そんな気持ちを重ねています。"],
+   links:[["配信サービスで聴く","https://linkco.re/TDfe3NdB?lang=ja"],["MVを見る","https://youtu.be/eVYxHF1yHl4"]]}
+];
+const ROUTES=[["home","HOME","ホーム"],["news","NEWS","お知らせ"],["about","ABOUT","コスモボーイズについて"],["music","MUSIC","作品"],["video","VIDEO","映像"]];
+const KL={rel:"RELEASE",chart:"CHART",info:"INFO"};
+
+/* ---------- helpers ---------- */
+const $=id=>document.getElementById(id);
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const WD=["SUN","MON","TUE","WED","THU","FRI","SAT"];
+const todayJ=new Date(Date.now()+9*3600e3).toISOString().slice(0,10);
+const dot=d=>d.split("-").join(".");
+const dd=d=>{const p=d.split("-");if(p.length<3)return `${p[0]}.${p[1]}`;return `${dot(d)}<small>${WD[new Date(d+"T00:00:00Z").getUTCDay()]}</small>`};
+const daysTo=d=>Math.round((new Date(d+"T00:00:00Z")-new Date(todayJ+"T00:00:00Z"))/864e5);
+const isSoon=r=>r.soon&&r.d>todayJ;
+const ext=(href,label,cls="btn")=>`<a class="${cls}" href="${href}" target="_blank" rel="noopener">${label}</a>`;
+const sh=(en,jp,more)=>`<div class="sh"><h2><span class="en">${en}</span><span class="jp">${jp}</span></h2>${more?`<a class="more" href="#${more}">VIEW ALL</a>`:""}</div>`;
+const relCard=r=>`<a class="rc" href="#r-${r.id}"><span class="im"><img src="${IMG(r.id)}" alt="${esc(r.t)}のジャケット" loading="lazy">${isSoon(r)?`<span class="badge">COMING SOON</span>`:""}</span><span class="meta"><span class="t">${esc(r.t)}</span><span class="s">${r.ty} / ${dot(r.d)}</span></span></a>`;
+const newsRow=n=>`<li><a href="#n-${n.id}"><span class="d">${dd(n.d)}</span><span><span class="tag ${n.k}">${KL[n.k]}</span><span class="t">${esc(n.t)}</span>${n.n?`<span class="n">${esc(n.n)}</span>`:""}</span><span class="go" aria-hidden="true"></span></a></li>`;
+
+/* ---------- views ---------- */
+function vHome(){
+  const nx=REL.find(r=>r.id===SITE.next.id&&r.d>=todayJ);
+  const latest=REL.find(r=>!isSoon(r));
+  const n=nx?daysTo(nx.d):0;
+  return `<section class="hero"><canvas id="sky" aria-hidden="true"></canvas><div class="wrap">
+    <div><div class="loc">YOKOHAMA, MINATO MIRAI</div><h1><span>COSMOS</span><span>BOYS</span></h1><p class="tl">SPACE <em>×</em> FRIENDSHIP <em>×</em> REACHING</p></div>
+    ${nx?`<a class="next" href="#r-${nx.id}"><img src="${IMG(nx.id)}" alt="${esc(nx.t)}のジャケット"><div><div class="k">NEXT RELEASE</div><div class="t">${esc(nx.t)}</div><div class="d"><b>${dot(nx.d)}</b><span>${esc(SITE.next.ev)}</span></div><div class="count">${n===0?`<b>TODAY</b>`:`<span>あと</span><b>${n}</b><span>DAYS</span>`}</div></div></a>`:""}
+  </div></section>
+  <div class="wrap">
+    <section class="sec">${sh("NEWS","お知らせ","news")}<ul class="nl">${NEWS.slice(0,3).map(newsRow).join("")}</ul></section>
+    <section class="sec">${sh("RANKING","よく聴かれている曲")}<ol class="rank">${RANK.map(([t,id],i)=>`<li><a href="#r-${id}"><span class="rn">${i+1}</span><img src="${IMG(id)}" alt="" loading="lazy"><span class="t">${esc(t)}</span><span class="go" aria-hidden="true"></span></a></li>`).join("")}</ol></section>
+    <section class="sec">${sh("LATEST","最新の作品")}
+      <div class="latest"><a href="#r-${latest.id}"><img src="${IMG(latest.id)}" alt="${esc(latest.t)}のジャケット"></a>
+      <div style="display:grid;gap:14px;align-content:start;min-width:0"><div><span class="tag rel">${latest.ty} / ${dot(latest.d)}</span><h3 class="lt">${esc(latest.t)}</h3></div>
+      </div><div class="btns">${latest.u?ext(latest.u,"配信サービスで聴く","btn solid"):""}${latest.mv?ext(latest.mv,"MVを見る"):""}</div></div>
+    </section>
+    <section class="sec">${sh("DISCOGRAPHY","作品","music")}<div class="grid">${REL.slice(0,4).map(relCard).join("")}</div></section>
+  </div>`;
+}
+function vMusic(){
+  return `<div class="wrap"><header class="pagehead"><span class="en">MUSIC</span><p class="jp">作品</p><p class="lede">Chapter2の作品は各配信サービスで聴けます。</p></header>
+    <section class="sec">${sh("CHAPTER2","2026.04 -")}<div class="grid">${REL.map(relCard).join("")}</div></section>
+    <section class="sec">${sh("CHAPTER1","2025.09 - 2026.03")}<p class="lede">EP9作。いまはBandcampで聴けます。</p>
+      <div class="c1all"><div class="c1n"><b>${CH1.length}</b><span>EP</span></div><p class="c1t">${CH1.slice().reverse().map(r=>r[0]).join(" / ")}</p><div class="btns">${ext("https://cosmosboys.bandcamp.com/","Bandcampで聴く","btn solid")}</div></div>
+    </section></div>`;
+}
+function trackRow(t,i){
+  const own=REL.find(r=>r.t===t);
+  return `<li><span class="no">${String(i+1).padStart(2,"0")}</span><span class="nm">${esc(t)}</span>${own?`<a href="#r-${own.id}" style="font-size:12px;color:var(--mute)">シングル</a>`:"<span></span>"}</li>`;
+}
+function vRelease(id){
+  const i=REL.findIndex(r=>r.id===id); if(i<0) return vMissing();
+  const r=REL[i], soon=isSoon(r);
+  const prev=REL[i+1], next=REL[i-1];
+  return `<div class="wrap"><div class="rel-hero">
+    <div style="display:grid;gap:14px"><nav class="crumb"><a href="#music">MUSIC</a><span>/</span><span>${r.ty}</span></nav><img class="cv" src="${IMG(r.id)}" alt="${esc(r.t)}のジャケット"></div>
+    <div style="display:grid;gap:22px;align-content:start">
+      <div style="display:grid;gap:10px">${soon?`<span class="tag soon" style="justify-self:start">COMING SOON</span>`:""}<h1>${esc(r.t)}</h1></div>
+      <dl class="facts"><div><dt>RELEASE</dt><dd>${dot(r.d)}</dd></div><div><dt>FORMAT</dt><dd>${r.ty}${r.tr?` / ${r.tr.length}曲`:""}</dd></div></dl>
+      <div class="btns">${soon?`<span class="btn" aria-disabled="true" style="opacity:.6">${dot(r.d)} 配信</span>`:""}${r.u?ext(r.u,"配信サービスで聴く","btn solid"):""}${r.mv?ext(r.mv,"MVを見る"):""}</div>
+    </div></div>
+    ${r.tr?`<section class="sec"><div class="sh"><h2><span class="en">TRACKS</span><span class="jp">収録曲</span></h2></div><ol class="tracks">${r.tr.map(trackRow).join("")}</ol></section>`:""}
+    <section class="sec"><div class="pn">${prev?`<a href="#r-${prev.id}"><small>PREV</small><span>${esc(prev.t)}</span></a>`:"<span></span>"}${next?`<a href="#r-${next.id}"><small>NEXT</small><span>${esc(next.t)}</span></a>`:"<span></span>"}</div><a class="btn" href="#music" style="justify-self:start">作品一覧へ</a></section>
+  </div>`;
+}
+function vAbout(){
+  return `<div class="wrap"><header class="pagehead"><span class="en">ABOUT</span><p class="jp">コスモボーイズについて</p></header>
+    <section class="sec about-grid">
+      <div class="prose"><p class="big">宇宙の尺度に、胸の奥の感情を重ねる。</p><p>コスモボーイズ（Cosmos Boys）は、横浜・みなとみらいを舞台に「宇宙 × 友情 × 挑戦」を掲げる個人プロジェクト。</p><p>2025年8月に始動。Chapter1で9枚のEP、Chapter2で連続シングルを発表し、2026年7月7日に1stフルアルバム『SIGNAL』をリリース。以降もシングルを継続配信中。</p></div>
+      <figure class="axis" aria-label="宇宙、友情、挑戦の3つが重なるところにコスモボーイズがいる"><svg viewBox="0 0 400 370" role="img" aria-hidden="true">
+        <circle class="c1" cx="200" cy="125" r="105"/><circle class="c2" cx="140" cy="230" r="105"/><circle class="c3" cx="260" cy="230" r="105"/>
+        <text class="w" x="200" y="70">SPACE</text><text class="j" x="200" y="90">宇宙</text>
+        <text class="w" x="100" y="268">FRIENDSHIP</text><text class="j" x="100" y="288">友情</text>
+        <text class="w" x="300" y="268">REACHING</text><text class="j" x="300" y="288">挑戦</text>
+        <defs><mask id="lg" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="180" y="160" width="40" height="47"><image href="img/logo.png" x="183" y="163" width="34" height="41"/></mask></defs><rect class="core" x="180" y="160" width="40" height="47" mask="url(#lg)"/>
+      </svg><figcaption class="eq">SPACE<b>×</b>FRIENDSHIP<b>×</b>REACHING</figcaption></figure>
+    </section>
+    <section class="sec">${sh("CHAPTERS","物語の章")}<div class="chap">
+      <article><h3><b>CHAPTER2</b><small>2026.04 -</small></h3><p>Red Shiftから始まったいまの章。細かい設定はすべて捨てて、作り手自身の経験を天体現象に重ねています。曲調も歌い方も変え、ポップパンクやエモを軸にしたバンドサウンドへ。宇宙の言葉を借りていても、元になっているのは実際にあったことと、そのとき感じたこと。この章はコスモボーイズの土台を固める期間。</p><a class="more" href="#music" style="justify-self:start">CHAPTER2の作品</a></article>
+      <article><h3><b>CHAPTER1</b><small>2025.09 - 2026.03</small></h3><p>最初の章は一からの手探り期間だった。宇宙を目指す幼なじみ3人組という設定で架空の物語を描いていました。EP9作で完結。いまはBandcampのみで聴けます。</p><a class="more" href="https://cosmosboys.bandcamp.com/" target="_blank" rel="noopener" style="justify-self:start">BANDCAMP</a></article>
+    </div></section>
+    <section class="sec">${sh("STORIES","曲の物語")}<p class="lede">それぞれの曲に重ねた天文現象と、込めた想い。</p><div class="stories">${STORIES.map(o=>`<article class="sto"><a class="sto-h" href="#r-${o.id}"><img src="${IMG(o.id)}" alt="" loading="lazy"><span>${esc(o.t)}</span></a><h3>${esc(o.h)}</h3>${o.p.map(x=>`<p>${esc(x)}</p>`).join("")}</article>`).join("")}</div></section>
+    <section class="sec">${sh("MADE BY","中の人")}<div class="prose"><p>エム。曲づくりからSNSでの発信まで、コスモボーイズを一人で作っている。</p><p>かつてはバンドを組み、ライブハウスでPAも経験したが、どちらも志半ばで離れた。現在は社会の波に揉まれながら、AIを活用して理想のバンドの具現化に挑んでいる。</p><p>自分自身の経験を天体現象に重ね、名前のつきにくい感情を曲にしていく。ライブハウスのステージに立つバンドに、AIが勝てる日は一生来ない。それでも「このバンドのライブに行きたい」と思わせることなら、できるはずだ。</p></div></section>
+  </div>`;
+}
+function vVideo(){
+  const v=REL.filter(r=>r.mv);
+  return `<div class="wrap"><header class="pagehead"><span class="en">VIDEO</span><p class="jp">映像</p><p class="lede">ミュージックビデオはYouTubeで公開しています。</p></header>
+    <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<a class="vc" href="${r.mv}" target="_blank" rel="noopener"><span class="im"><img src="${IMG(r.id)}" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></span><span class="t">${esc(r.t)}</span><span class="s">YOUTUBE / ${dot(r.d)}</span></a>`).join("")}</div></section>
+    <section class="sec"><div class="btns">${ext(SITE.follow[1][1],"YouTubeチャンネル","btn solid")}${ext(SITE.follow[0][1],"Instagramのリール")}</div></section></div>`;
+}
+function vNews(){
+  return `<div class="wrap"><header class="pagehead"><span class="en">NEWS</span><p class="jp">お知らせ</p></header><section class="sec" style="padding-top:28px"><ul class="nl" style="border-top:1px solid var(--fg)">${NEWS.map(newsRow).join("")}</ul></section></div>`;
+}
+function vArticle(id){
+  const n=NEWS.find(x=>x.id===id); if(!n) return vMissing();
+  const r=n.rel&&REL.find(x=>x.id===n.rel);
+  return `<div class="wrap"><article class="art"><nav class="crumb"><a href="#news">NEWS</a><span>/</span><span>${KL[n.k]}</span></nav>
+    <div class="meta"><span>${dot(n.d)}</span><span class="tag ${n.k}">${KL[n.k]}</span></div><h1>${esc(n.t)}</h1>${n.n?`<p class="sum">${esc(n.n)}</p>`:""}
+    ${r?`<a href="#r-${r.id}"><img class="cv" src="${IMG(r.id)}" alt="${esc(r.t)}のジャケット"></a>`:""}
+    <div class="body">${n.body.map(x=>`<p>${esc(x)}</p>`).join("")}</div>
+    <div class="btns">${n.links.map(([l,u])=>ext(u,esc(l))).join("")}${r?`<a class="btn" href="#r-${r.id}">作品ページへ</a>`:""}</div>
+    <a class="btn" href="#news" style="justify-self:start;margin-top:20px">お知らせ一覧へ</a></article></div>`;
+}
+function vMissing(){return `<div class="wrap"><header class="pagehead"><span class="en">404</span><p class="lede">ページが見つかりません。</p><a class="btn" href="#home" style="justify-self:start">ホームへ</a></header></div>`}
+
+/* ---------- router ---------- */
+function route(){
+  const h=(location.hash||"#home").slice(1);
+  let html, cur;
+  if(h.startsWith("r-")){html=vRelease(h.slice(2));cur="music";}
+  else if(h.startsWith("n-")){html=vArticle(h.slice(2));cur="news";}
+  else{cur=ROUTES.some(r=>r[0]===h)?h:"home";html={home:vHome,music:vMusic,about:vAbout,video:vVideo,news:vNews}[cur]();}
+  const m=$("main"); m.innerHTML=`<div class="view">${html}</div>`;
+  document.querySelectorAll("[data-route]").forEach(a=>{if(a.dataset.route===cur)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  $("cat").hidden=cur!=="about";
+  closeMenu(true); window.scrollTo(0,0);
+  if(cur==="home") sky();
+  RV($("main"));
+}
+addEventListener("hashchange",route);
+
+/* nav + menu + footer */
+$("nav").innerHTML=ROUTES.map(([k,en])=>`<a href="#${k}" data-route="${k}">${en}</a>`).join("");
+$("sheet-nav").innerHTML=ROUTES.map(([k,en,jp])=>`<a href="#${k}" data-route="${k}"><b>${en}</b><span>${jp}</span></a>`).join("");
+$("sheet-sub").innerHTML=[...SITE.listen.slice(0,4),...SITE.follow].map(([n,u])=>ext(u,n,"")).join("")+ext("https://suzuri.jp/CosmosBoys","SUZURI グッズ","");
+$("f-listen").innerHTML=SITE.listen.map(([n,u])=>`<li>${ext(u,n,"")}</li>`).join("");
+$("f-follow").innerHTML=SITE.follow.map(([n,u,s])=>`<li><a href="${u}" target="_blank" rel="noopener">${n}<small>${s}</small></a></li>`).join("");
+let lastFocus=null;
+function openMenu(){lastFocus=document.activeElement;$("sheet").hidden=false;$("menu-open").setAttribute("aria-expanded","true");document.body.style.overflow="hidden";$("menu-close").focus()}
+function closeMenu(silent){if($("sheet").hidden)return;$("sheet").hidden=true;$("menu-open").setAttribute("aria-expanded","false");document.body.style.overflow="";if(!silent&&lastFocus)lastFocus.focus()}
+$("menu-open").addEventListener("click",openMenu);
+$("menu-close").addEventListener("click",()=>closeMenu());
+addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-ts]"); if(!b) return;
+  const p=$("ts-"+b.dataset.ts); p.hidden=!p.hidden; b.setAttribute("aria-expanded",String(!p.hidden)); b.textContent=p.hidden?"物語":"閉じる";
+});
+
+/* night sky with an occasional meteor; static stars when motion is reduced */
+let skyRAF=0;
+function sky(){
+  cancelAnimationFrame(skyRAF);
+  const c=$("sky"); if(!c) return; const x=c.getContext("2d");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W,H,stars=[],mets=[],last=0; const dpr=Math.min(2,devicePixelRatio||1);
+  const col=()=>getComputedStyle(document.documentElement);
+  function size(){const r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    stars=Array.from({length:Math.round(W*H/2600)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.1+.2,a:Math.random()*.6+.2,t:Math.random()*6}));}
+  size(); addEventListener("resize",size,{once:true});
+  function frame(t){
+    if(!$("sky")) return;
+    if(getComputedStyle(document.documentElement).getPropertyValue("--night").trim()==="1"){x.clearRect(0,0,W,H);skyRAF=requestAnimationFrame(frame);return;}
+    const cs=col(), fg=cs.getPropertyValue("--fg").trim()||"#fff", coral=cs.getPropertyValue("--coral").trim(), teal=cs.getPropertyValue("--teal").trim(), night=cs.getPropertyValue("--night").trim()==="1";
+    x.clearRect(0,0,W,H);
+    for(const s of stars){x.globalAlpha=s.a*(reduce?1:.75+.25*Math.sin(t/900+s.t));x.fillStyle=fg;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill();}
+    if(!reduce){
+      if(!night){mets=[];}
+      else if(t-last>700+Math.random()*1500){last=t;const big=Math.random()<.25;mets.push({x:W*(.25+Math.random()*.8),y:Math.random()*H*.45,t0:t,dur:big?1500:900+Math.random()*400,len:big?240:110+Math.random()*80,c:Math.random()<.5?teal:coral,w:big?2.4:1.4});if(mets.length>8)mets.shift();}
+      mets=mets.filter(m=>t-m.t0<m.dur);
+      for(const m of mets){const k=(t-m.t0)/m.dur, len=m.len, hx=m.x-k*m.len*1.9, hy=m.y+k*m.len*1.25;
+        const g=x.createLinearGradient(hx,hy,hx+len*.84,hy-len*.55);g.addColorStop(0,m.c);g.addColorStop(1,"transparent");
+        x.globalAlpha=Math.sin(k*Math.PI);x.shadowColor=m.c;x.shadowBlur=14;x.strokeStyle=g;x.lineWidth=m.w;x.beginPath();x.moveTo(hx,hy);x.lineTo(hx+len*.84,hy-len*.55);x.stroke();
+        x.fillStyle="#fff";x.beginPath();x.arc(hx,hy,m.w*.9,0,7);x.fill();x.shadowBlur=0;}
+      skyRAF=requestAnimationFrame(frame);
+    }
+    x.globalAlpha=1;
+  }
+  skyRAF=requestAnimationFrame(frame);
+}
+
+/* ===== night sky: nebula, three star layers with scroll parallax, meteor shower, tap to shoot ===== */
+(function(){
+  const c=$("night"), x=c.getContext("2d");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isNight=()=>getComputedStyle(document.documentElement).getPropertyValue("--night").trim()==="1";
+  let W=0,H=0,dpr=1,layers=[],mets=[],last=0,burstAt=0,raf=0,warpAt=0;
+  const TEAL=[67,199,202], CORAL=[255,122,92], WHITE=[232,238,240];
+  const rgba=(c,a)=>`rgba(${c[0]},${c[1]},${c[2]},${a})`;
+  function size(){
+    dpr=Math.min(2,devicePixelRatio||1); W=innerWidth; H=innerHeight;
+    c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    const area=W*H;
+    layers=[[.06,area/2200,.6],[.18,area/7000,1.1],[.38,area/26000,1.8]].map(([sp,n,r])=>({sp,stars:Array.from({length:Math.round(n)},()=>({x:Math.random()*W,y:Math.random()*H*2,r:Math.random()*r+.25,a:Math.random()*.6+.25,t:Math.random()*6,tint:Math.random()<.12?TEAL:Math.random()<.08?CORAL:WHITE}))}));
+  }
+  const neb=[{c:TEAL,x:.85,y:.08,r:.75,sx:.00005,sy:.00007,p:0},{c:CORAL,x:.05,y:.92,r:.7,sx:.00006,sy:.00004,p:2},{c:[120,90,220],x:.55,y:.5,r:.55,sx:.00004,sy:.00005,p:4}];
+  function shoot(px,py,big){
+    const ang=Math.PI*(.74+Math.random()*.06), base=Math.max(W,500)/1000, sp=base*(big?.55:.4+Math.random()*.25);
+    mets.push({x:px,y:py,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,t0:performance.now(),dur:big?1700:900+Math.random()*500,len:(big?.75:.32+Math.random()*.2)*Math.min(W,700),w:big?2.6:1.3+Math.random()*.6,c:Math.random()<.5?TEAL:CORAL});
+    if(mets.length>14) mets.shift();
+  }
+  function frame(t){
+    raf=0;
+    if(!isNight()){x.clearRect(0,0,W,H);return;}
+    const sy=scrollY;
+    x.clearRect(0,0,W,H);
+    // nebula drifting slowly
+    x.globalCompositeOperation="lighter";
+    for(const n of neb){
+      const k=reduce?0:t;
+      const cx=(n.x+Math.sin(k*n.sx+n.p)*.08)*W, cy=(n.y+Math.cos(k*n.sy+n.p)*.06)*H-sy*.04;
+      const R=n.r*Math.max(W,H), g=x.createRadialGradient(cx,cy,0,cx,cy,R);
+      const pulse=reduce?1:.85+.15*Math.sin(k*.0004+n.p);
+      g.addColorStop(0,rgba(n.c,.20*pulse)); g.addColorStop(.45,rgba(n.c,.07*pulse)); g.addColorStop(1,rgba(n.c,0));
+      x.fillStyle=g; x.fillRect(0,0,W,H);
+    }
+    // stars, deeper layers move slower on scroll; during a warp they stretch toward the edges
+    const wk=warpAt?Math.max(0,1-(performance.now()-warpAt)/900):0, wv=wk>0?Math.sin(wk*Math.PI):0;
+    for(const L of layers){
+      const off=(sy*L.sp)%(H*2);
+      for(const s of L.stars){
+        let y=s.y-off; if(y<-4) y+=H*2; if(y>H+4) continue;
+        const tw=reduce?1:.55+.45*Math.sin(t/700+s.t);
+        x.globalAlpha=s.a*tw; x.fillStyle=rgba(s.tint,1);
+        if(wv>.02){ const dx=s.x-W/2, dy=y-H/2, k=wv*(.25+L.sp*2.2); x.globalAlpha=Math.min(1,s.a*1.6); x.strokeStyle=rgba(s.tint,1); x.lineWidth=s.r*1.3; x.beginPath(); x.moveTo(s.x,y); x.lineTo(s.x+dx*k,y+dy*k); x.stroke(); continue; }
+        x.beginPath(); x.arc(s.x,y,s.r,0,7); x.fill();
+        if(s.r>1.6&&tw>.9){ // cross glint on the brightest
+          x.globalAlpha=(tw-.9)*6*s.a; x.strokeStyle=rgba(s.tint,1); x.lineWidth=.6;
+          x.beginPath(); x.moveTo(s.x-s.r*5,y); x.lineTo(s.x+s.r*5,y); x.moveTo(s.x,y-s.r*5); x.lineTo(s.x,y+s.r*5); x.stroke();
+        }
+      }
+    }
+    x.globalAlpha=1;
+    if(!reduce){
+      // opening burst, then a steady shower
+      if(burstAt&&t-burstAt<1600&&Math.random()<.18) shoot(W*(.3+Math.random()*.75),H*Math.random()*.4,Math.random()<.2);
+      if(t-last>600+Math.random()*1400){last=t; shoot(W*(.25+Math.random()*.8),H*Math.random()*.5,Math.random()<.12);}
+      const now=performance.now();
+      mets=mets.filter(m=>now-m.t0<m.dur);
+      for(const m of mets){
+        const k=(now-m.t0)/m.dur, d=k*m.dur, hx=m.x+m.vx*d, hy=m.y+m.vy*d;
+        const nx=-m.vx, ny=-m.vy, nl=Math.hypot(nx,ny)||1, tx=hx+nx/nl*m.len, ty=hy+ny/nl*m.len;
+        const g=x.createLinearGradient(hx,hy,tx,ty); g.addColorStop(0,rgba(m.c,1)); g.addColorStop(.3,rgba(m.c,.45)); g.addColorStop(1,rgba(m.c,0));
+        const a=Math.sin(Math.min(1,k)*Math.PI);
+        x.globalAlpha=a; x.shadowColor=rgba(m.c,1); x.shadowBlur=18; x.strokeStyle=g; x.lineWidth=m.w; x.lineCap="round";
+        x.beginPath(); x.moveTo(hx,hy); x.lineTo(tx,ty); x.stroke();
+        x.shadowBlur=24; x.fillStyle="#fff"; x.beginPath(); x.arc(hx,hy,m.w*1.1,0,7); x.fill();
+        if(m.w>2){ // big ones shed sparks
+          for(let i=0;i<3;i++){const q=Math.random()*.35; x.globalAlpha=a*(1-q*2); x.fillStyle=rgba(m.c,1); x.beginPath(); x.arc(hx+(tx-hx)*q+(Math.random()-.5)*6,hy+(ty-hy)*q+(Math.random()-.5)*6,.9,0,7); x.fill();}
+        }
+        x.shadowBlur=0;
+      }
+      x.globalAlpha=1;
+    }
+    x.globalCompositeOperation="source-over";
+    if(!reduce) raf=requestAnimationFrame(frame);
+  }
+  const start=()=>{ if(!raf) raf=requestAnimationFrame(frame); };
+  size(); burstAt=performance.now(); start();
+  addEventListener("resize",()=>{size(); if(reduce) start();});
+  if(reduce) addEventListener("scroll",start,{passive:true});
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{burstAt=performance.now(); start();});
+  new MutationObserver(()=>{burstAt=performance.now(); start();}).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+  document.addEventListener("pointerdown",e=>{ if(!isNight()||reduce||e.target.closest("a,button,summary,input")) return; shoot(e.clientX+60,e.clientY-40,true); start(); });
+  document.addEventListener("visibilitychange",()=>{ if(!document.hidden) start(); });
+  addEventListener("hashchange",()=>{ if(!reduce&&isNight()){ warpAt=performance.now(); start(); } });
+})();
+/* ===== scroll reveal wiring ===== */
+const RV=(function(){
+  if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches) return ()=>{};
+  document.documentElement.classList.add("rv-on");
+  const proxy=new Map();
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const t=proxy.get(e.target)||[e.target]; t.forEach(x=>{ x.classList.add("in"); if(x.dataset.count) countUp(x); }); io.unobserve(e.target); proxy.delete(e.target); } }),{rootMargin:"0px 0px -8% 0px",threshold:.05});
+  const watchImg=el=>{ el.classList.add("rv-img"); const p=el.parentElement; if(!proxy.has(p)) proxy.set(p,[]); proxy.get(p).push(el); io.observe(p); };
+  const split=el=>{ if(el.dataset.split) return; el.dataset.split=1; let i=0;
+    const walk=n=>{ [...n.childNodes].forEach(c=>{ if(c.nodeType===3){ const f=document.createDocumentFragment(); [...c.textContent].forEach(ch=>{ const s=document.createElement("span"); s.className="rv-ch"; s.style.setProperty("--i",i++); s.style.setProperty("--r",Math.floor(Math.random()*8)); s.textContent=ch===" "?" ":ch; f.appendChild(s); }); c.replaceWith(f); } else if(c.nodeType===1) walk(c); }); };
+    walk(el); };
+  function countUp(el){ const to=+el.dataset.count, t0=performance.now(); const tick=t=>{ const k=Math.min(1,(t-t0)/1100); el.textContent=Math.round(to*(1-Math.pow(1-k,3))); if(k<1) requestAnimationFrame(tick); }; el.textContent="0"; requestAnimationFrame(tick); }
+  return function(root){
+    root.querySelectorAll(".en, .hero h1 span, .pagehead .en").forEach(el=>{ split(el); el.classList.add("rv-host"); io.observe(el); });
+    root.querySelectorAll(".sh").forEach(el=>{ el.classList.add("rv"); io.observe(el); });
+    root.querySelectorAll(".grid, .vg, .start").forEach(g=>[...g.children].forEach((c,i)=>{ const im=c.querySelector(".im")||c; im.style.setProperty("--i",i%4); watchImg(im); }));
+    root.querySelectorAll(".next img, .latest img, .rel-hero .cv, .art .cv, .rank img, .sto-h img").forEach(watchImg);
+    root.querySelectorAll(".nl li, .rank li, .tracks li, .stories .sto, .chap article, .prose p, .lede, .c1all, .facts, .btns, .theme3").forEach((el,i)=>{ el.classList.add("rv-up"); el.style.setProperty("--i",(i%5)); io.observe(el); });
+    root.querySelectorAll(".axis").forEach(el=>{ el.classList.add("rv"); io.observe(el); });
+    root.querySelectorAll(".count b").forEach(el=>{ if(/^\d+$/.test(el.textContent)){ el.dataset.count=el.textContent; io.observe(el); } });
+  };
+})();
+
+(function(){const c=$("cat");let t=0;c.addEventListener("click",()=>{c.classList.add("turn");clearTimeout(t);t=setTimeout(()=>c.classList.remove("turn"),1800);});})();
+route();
+</script>
