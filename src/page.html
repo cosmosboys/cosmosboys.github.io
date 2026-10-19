@@ -202,12 +202,19 @@ main{min-height:70vh}
 .c1n b{font-family:var(--disp);font-stretch:85%;font-weight:800;font-size:44px;line-height:1;text-shadow:var(--glow-t)}
 .c1n span{font-family:var(--disp);font-weight:700;font-size:12px;letter-spacing:.2em;color:var(--mute)}
 .c1t{font-family:var(--disp);font-stretch:100%;font-weight:700;font-size:13px;letter-spacing:.12em;line-height:1.9;color:var(--mute)}
+/* line breaks for Japanese on phones: no one-character last lines in body text, titles break at spaces instead of mid-word */
+p,dd,.lede,.sum{text-wrap:pretty}
+.rc .t,.vc .t,.rank .t,.latest .lt,.next .t,.rel-hero h1{word-break:keep-all;overflow-wrap:anywhere;text-wrap:balance}
+.nl .t,.nl .n,.lede,.sum{text-wrap:balance}
+.art h1{word-break:auto-phrase;text-wrap:pretty}
+.story h3,.sto h3,.tstory h4{word-break:auto-phrase}
 /* about */
 .about-grid{display:grid;gap:40px}
 @media (min-width:860px){.about-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:56px}}
 .prose{display:grid;gap:16px;max-width:40em}
 .prose p{font-size:15.5px;line-height:2}
-.prose .big{font-family:var(--mincho);font-weight:800;font-size:clamp(20px,5.6vw,28px);line-height:1.7}
+.prose .big{font-family:var(--mincho);font-weight:800;font-size:clamp(23px,6.8vw,34px);line-height:1.6;letter-spacing:.02em}
+.prose .big span{display:inline-block}
 /* three themes drawn as overlapping orbits; the band sits where all three meet */
 .axis{display:grid;justify-items:center;gap:14px;padding-block:8px}
 .axis svg{width:min(100%,420px);height:auto;overflow:visible}
@@ -474,7 +481,7 @@ function vRelease(id){
 function vAbout(){
   return `<div class="wrap"><header class="pagehead"><span class="en">ABOUT</span><p class="jp">コスモボーイズについて</p></header>
     <section class="sec about-grid">
-      <div class="prose"><p class="big">宇宙の尺度に、胸の奥の感情を重ねる。</p><p>コスモボーイズ（Cosmos Boys）は、横浜・みなとみらいを舞台に「宇宙 × 友情 × 挑戦」を掲げる個人プロジェクト。</p><p>2025年8月に始動。Chapter1で9枚のEP、Chapter2で連続シングルを発表し、2026年7月7日に1stフルアルバム『SIGNAL』をリリース。以降もシングルを継続配信中。</p></div>
+      <div class="prose"><p class="big"><span>宇宙の尺度に、</span><span>胸の奥の感情を重ねる。</span></p><p>コスモボーイズ（Cosmos Boys）は、横浜・みなとみらいを舞台に「宇宙 × 友情 × 挑戦」を掲げる個人プロジェクト。</p><p>2025年8月に始動。Chapter1で9枚のEP、Chapter2で連続シングルを発表し、2026年7月7日に1stフルアルバム『SIGNAL』をリリース。以降もシングルを継続配信中。</p></div>
       <figure class="axis" aria-label="宇宙、友情、挑戦の3つが重なるところにコスモボーイズがいる"><svg viewBox="0 0 400 370" role="img" aria-hidden="true">
         <circle class="c1" cx="200" cy="125" r="105"/><circle class="c2" cx="140" cy="230" r="105"/><circle class="c3" cx="260" cy="230" r="105"/>
         <text class="w" x="200" y="70">SPACE</text><text class="j" x="200" y="90">宇宙</text>
