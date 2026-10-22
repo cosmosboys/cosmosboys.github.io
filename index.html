@@ -1,9 +1,9 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>COSMOS BOYS Official</title>
+<title>コスモボーイズ 公式サイト | Cosmos Boys</title>
 <meta name="description" content="宇宙の尺度に、胸の奥の感情を重ねる。横浜・みなとみらいを舞台に「宇宙 × 友情 × 挑戦」を掲げる個人プロジェクト、Cosmos Boysの公式サイト。">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="COSMOS BOYS Official">
-<meta property="og:title" content="COSMOS BOYS Official">
+<meta property="og:site_name" content="コスモボーイズ 公式サイト | Cosmos Boys">
+<meta property="og:title" content="コスモボーイズ 公式サイト | Cosmos Boys">
 <meta property="og:description" content="宇宙の尺度に、胸の奥の感情を重ねる。">
 <meta property="og:url" content="https://cosmosboys.github.io/">
 <meta property="og:image" content="https://cosmosboys.github.io/img/ogp.jpg">
@@ -58,7 +58,7 @@ button{font:inherit;color:inherit}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .mark{width:26px;height:31px;background:var(--fg);-webkit-mask:url(img/logo.png) center/contain no-repeat;mask:url(img/logo.png) center/contain no-repeat}
-.brand b{font-family:var(--disp);font-stretch:125%;font-weight:800;font-size:15px;letter-spacing:.08em}
+.brand b{text-transform:uppercase;font-family:var(--disp);font-stretch:125%;font-weight:800;font-size:15px;letter-spacing:.08em}
 .nav{display:none;gap:26px}
 .nav a{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.2em;text-decoration:none;color:var(--mute);padding:6px 0}
 .nav a[aria-current="page"]{color:var(--fg);box-shadow:inset 0 -2px var(--coral)}
@@ -102,7 +102,7 @@ main{min-height:70vh}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero .wrap{position:relative;display:grid;gap:30px;padding-block:40px 36px}
 .hero .loc{font-family:var(--disp);font-stretch:100%;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute)}
-.hero h1{text-shadow:var(--glow-t);font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:clamp(50px,14.5vw,124px);line-height:.84;letter-spacing:-.005em}
+.hero h1{text-transform:uppercase;text-shadow:var(--glow-t);font-family:var(--disp);font-stretch:125%;font-weight:900;font-size:clamp(50px,14.5vw,124px);line-height:.84;letter-spacing:-.005em}
 .hero h1 span{display:block}
 .hero .tl{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.24em;margin-top:16px}
 .hero .tl em{font-style:normal;color:var(--coral);text-shadow:var(--glow-c)}
@@ -323,7 +323,7 @@ main,.foot{position:relative;z-index:1}
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="#home" aria-label="COSMOS BOYS ホーム"><span class="mark" aria-hidden="true"></span><b>COSMOS BOYS</b></a>
+    <a class="brand" href="#home" aria-label="Cosmos Boys ホーム"><span class="mark" aria-hidden="true"></span><b>Cosmos Boys</b></a>
     <nav class="nav" id="nav" aria-label="メインメニュー"></nav>
     <button class="menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="sheet"><i aria-hidden="true"></i>MENU</button>
   </div>
@@ -331,7 +331,7 @@ main,.foot{position:relative;z-index:1}
 
 <div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-label="メニュー">
   <div class="wrap">
-    <div class="top"><a class="brand" href="#home"><span class="mark" aria-hidden="true"></span><b>COSMOS BOYS</b></a><button class="close" id="menu-close" type="button">CLOSE</button></div>
+    <div class="top"><a class="brand" href="#home"><span class="mark" aria-hidden="true"></span><b>Cosmos Boys</b></a><button class="close" id="menu-close" type="button">CLOSE</button></div>
     <nav id="sheet-nav" aria-label="メニュー"></nav>
     <div class="sub" id="sheet-sub"></div>
   </div>
@@ -439,7 +439,7 @@ function vHome(){
   const latest=REL.find(r=>!isSoon(r));
   const n=nx?daysTo(nx.d):0;
   return `<section class="hero"><canvas id="sky" aria-hidden="true"></canvas><div class="wrap">
-    <div><div class="loc">YOKOHAMA, MINATO MIRAI</div><h1><span>COSMOS</span><span>BOYS</span></h1><p class="tl">SPACE <em>×</em> FRIENDSHIP <em>×</em> REACHING</p></div>
+    <div><div class="loc">YOKOHAMA, MINATO MIRAI</div><h1><span>Cosmos</span><span>Boys</span></h1><p class="tl">SPACE <em>×</em> FRIENDSHIP <em>×</em> REACHING</p></div>
     ${nx?`<a class="next" href="#r-${nx.id}"><img src="${IMG(nx.id)}" alt="${esc(nx.t)}のジャケット"><div><div class="k">NEXT RELEASE</div><div class="t">${esc(nx.t)}</div><div class="d"><b>${dot(nx.d)}</b><span>${esc(SITE.next.ev)}</span></div><div class="count">${n===0?`<b>TODAY</b>`:`<span>あと</span><b>${n}</b><span>DAYS</span>`}</div></div></a>`:""}
   </div></section>
   <div class="wrap">
