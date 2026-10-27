@@ -496,7 +496,7 @@ function vAbout(){
       <article><h3><b>CHAPTER1</b><small>2025.09 - 2026.03</small></h3><p>最初の章は一からの手探り期間だった。宇宙を目指す幼なじみ3人組という設定で架空の物語を描いていました。EP9作で完結。いまはBandcampのみで聴けます。</p><a class="more" href="https://cosmosboys.bandcamp.com/" target="_blank" rel="noopener" style="justify-self:start">BANDCAMP</a></article>
     </div></section>
     <section class="sec">${sh("STORIES","曲の物語")}<p class="lede">それぞれの曲に重ねた天文現象と、込めた想い。</p><div class="stories">${STORIES.map(o=>`<article class="sto"><a class="sto-h" href="#r-${o.id}"><img src="${TH(o.id)}" alt="" loading="lazy" decoding="async"><span>${esc(o.t)}</span></a><h3>${esc(o.h)}</h3>${o.p.map(x=>`<p>${esc(x)}</p>`).join("")}</article>`).join("")}</div></section>
-    <section class="sec">${sh("MADE BY","中の人")}<div class="prose"><p>エムです。コスモボーイズの企画から発信まで全部一人でやってます。かつてはバンドを組み、ライブハウスでPAも経験したが、どちらも志半ばで離れました。今は社会の波に揉まれながら、AIを活用して理想のバンドの具現化に挑んでます。</p><p>自分の経験を天体現象に重ねて、名前のつきにくい感情を曲にしています。ライブハウスのステージに立つバンドに、AIが勝てる日は一生来ない。それでも「このバンドのライブに行きたい」と思ってもらうことならできるはず。一曲でも、一節でも、画像一枚でも、映像一秒でもいい。誰かの宇宙に少しだけ留まれたら。今はそれだけを思って作り続けています。</p></div></section>
+    <section class="sec">${sh("MADE BY","中の人")}<div class="prose"><p>エムです。コスモボーイズの企画から発信まで全部一人でやってます。かつてはバンドを組み、ライブハウスでPAも経験しましたが、どちらも志半ばで離れました。今は社会の波に揉まれながら、AIを活用して理想のバンドの具現化に挑んでます。</p><p>自分の経験を天体現象に重ねて、名前のつきにくい感情を曲にしています。ライブハウスのステージに立つバンドに、AIが勝てる日は一生来ない。それでも「このバンドのライブに行きたい」と思ってもらうことならできるはず。一曲でも、一節でも、画像一枚でも、映像一秒でもいい。誰かの宇宙に少しだけ留まれたら。今はそれだけを思って作り続けています。</p></div></section>
   </div>`;
 }
 function vVideo(){
