@@ -243,8 +243,11 @@ p,dd,.lede,.sum{text-wrap:pretty}
 .sto h3{font-family:var(--mincho);font-weight:800;font-size:clamp(20px,5.4vw,26px);line-height:1.5;text-wrap:balance}
 .sto p{font-size:15px;line-height:2}
 /* video */
-.vg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
-@media (min-width:860px){.vg{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vg{display:grid;grid-template-columns:1fr;gap:28px 16px}
+@media (min-width:860px){.vg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vc .vf{aspect-ratio:16/9}
+.vc .vf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vc .vl{color:var(--mute);text-decoration:underline;text-underline-offset:3px;justify-self:start}
 .vc{display:grid;gap:10px;text-decoration:none}
 .vc .im{position:relative;aspect-ratio:1;overflow:hidden;background:var(--bg2)}
 .vc img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) brightness(.82)}
@@ -499,10 +502,11 @@ function vAbout(){
     <section class="sec">${sh("MADE BY","中の人")}<div class="prose"><p>エムです。コスモボーイズの企画から発信まで全部一人でやってます。かつてはバンドを組み、ライブハウスでPAも経験しましたが、どちらも志半ばで離れました。今は社会の波に揉まれながら、AIを活用して理想のバンドの具現化に挑んでます。</p><p>自分の経験を天体現象に重ねて、名前のつきにくい感情を曲にしています。ライブハウスのステージに立つバンドに、AIが勝てる日は一生来ない。それでも「このバンドのライブに行きたい」と思ってもらうことならできるはず。一曲でも、一節でも、画像一枚でも、映像一秒でもいい。誰かの宇宙に少しだけ留まれたら。今はそれだけを思って作り続けています。</p></div></section>
   </div>`;
 }
+const ytId=u=>{const m=String(u||"").match(/(?:youtu\.be\/|v=)([\w-]{6,})/);return m?m[1]:""};
 function vVideo(){
   const v=REL.filter(r=>r.mv);
   return `<div class="wrap"><header class="pagehead"><span class="en">VIDEO</span><p class="jp">映像</p><p class="lede">ミュージックビデオはYouTubeで公開しています。</p></header>
-    <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<a class="vc" href="${r.mv}" target="_blank" rel="noopener"><span class="im"><img src="${TH(r.id)}" alt="" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span><span class="t">${esc(r.t)}</span><span class="s">YOUTUBE / ${dot(r.d)}</span></a>`).join("")}</div></section>
+    <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<div class="vc"><span class="im vf"><iframe src="https://www.youtube-nocookie.com/embed/${ytId(r.mv)}" title="${esc(r.t)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></span><span class="t">${esc(r.t)}</span><span class="s">${dot(r.d)}</span><a class="s vl" href="${r.mv}" target="_blank" rel="noopener">YouTubeで開く</a></div>`).join("")}</div></section>
     <section class="sec"><div class="btns">${ext(SITE.follow[1][1],"YouTubeチャンネル","btn solid")}${ext(SITE.follow[0][1],"Instagramのリール")}</div></section></div>`;
 }
 function vNews(){
@@ -687,6 +691,7 @@ const RV=(function(){
     root.querySelectorAll(".nl li, .rank li, .tracks li, .stories .sto, .chap article, .prose p, .lede, .c1all, .facts, .btns, .theme3").forEach((el,i)=>{ el.classList.add("rv-up"); el.style.setProperty("--i",(i%5)); io.observe(el); });
     root.querySelectorAll(".axis").forEach(el=>{ el.classList.add("rv"); io.observe(el); });
     root.querySelectorAll(".count b").forEach(el=>{ if(/^\d+$/.test(el.textContent)){ el.dataset.count=el.textContent; io.observe(el); } });
+    setTimeout(()=>{ root.querySelectorAll(".rv,.rv-up,.rv-img,.rv-host").forEach(el=>el.classList.add("in")); },1000);
   };
 })();
 
