@@ -245,8 +245,8 @@ p,dd,.lede,.sum{text-wrap:pretty}
 /* video */
 .vg{display:grid;grid-template-columns:1fr;gap:28px 16px}
 @media (min-width:860px){.vg{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.vc .vf{aspect-ratio:16/9}
-.vc .vf iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vg .vc .vid{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--bg2)}
+.vg .vc .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vc .vl{color:var(--mute);text-decoration:underline;text-underline-offset:3px;justify-self:start}
 .vc{display:grid;gap:10px;text-decoration:none}
 .vc .im{position:relative;aspect-ratio:1;overflow:hidden;background:var(--bg2)}
@@ -506,7 +506,7 @@ const ytId=u=>{const m=String(u||"").match(/(?:youtu\.be\/|v=)([\w-]{6,})/);retu
 function vVideo(){
   const v=REL.filter(r=>r.mv);
   return `<div class="wrap"><header class="pagehead"><span class="en">VIDEO</span><p class="jp">映像</p><p class="lede">ミュージックビデオはYouTubeで公開しています。</p></header>
-    <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<div class="vc"><span class="im vf"><iframe src="https://www.youtube-nocookie.com/embed/${ytId(r.mv)}" title="${esc(r.t)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></span><span class="t">${esc(r.t)}</span><span class="s">${dot(r.d)}</span><a class="s vl" href="${r.mv}" target="_blank" rel="noopener">YouTubeで開く</a></div>`).join("")}</div></section>
+    <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<div class="vc"><span class="vid"><iframe src="https://www.youtube-nocookie.com/embed/${ytId(r.mv)}" title="${esc(r.t)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></span><span class="t">${esc(r.t)}</span><span class="s">${dot(r.d)}</span><a class="s vl" href="${r.mv}" target="_blank" rel="noopener">YouTubeで開く</a></div>`).join("")}</div></section>
     <section class="sec"><div class="btns">${ext(SITE.follow[1][1],"YouTubeチャンネル","btn solid")}${ext(SITE.follow[0][1],"Instagramのリール")}</div></section></div>`;
 }
 function vNews(){
@@ -686,7 +686,7 @@ const RV=(function(){
   return function(root){
     root.querySelectorAll(".en, .hero h1 span, .pagehead .en").forEach(el=>{ split(el); el.classList.add("rv-host"); io.observe(el); });
     root.querySelectorAll(".sh").forEach(el=>{ el.classList.add("rv"); io.observe(el); });
-    root.querySelectorAll(".grid, .vg, .start").forEach(g=>[...g.children].forEach((c,i)=>{ const im=c.querySelector(".im")||c; im.style.setProperty("--i",i%4); watchImg(im); }));
+    root.querySelectorAll(".grid, .vg, .start").forEach(g=>[...g.children].forEach((c,i)=>{ const im=c.querySelector(".im,.vid")||c; im.style.setProperty("--i",i%4); watchImg(im); }));
     root.querySelectorAll(".next img, .latest img, .rel-hero .cv, .art .cv, .rank img, .sto-h img").forEach(watchImg);
     root.querySelectorAll(".nl li, .rank li, .tracks li, .stories .sto, .chap article, .prose p, .lede, .c1all, .facts, .btns, .theme3").forEach((el,i)=>{ el.classList.add("rv-up"); el.style.setProperty("--i",(i%5)); io.observe(el); });
     root.querySelectorAll(".axis").forEach(el=>{ el.classList.add("rv"); io.observe(el); });
