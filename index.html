@@ -255,6 +255,13 @@ p,dd,.lede,.sum{text-wrap:pretty}
 .vc .play::after{content:"";margin-left:3px;border-left:12px solid var(--bg);border-top:7px solid transparent;border-bottom:7px solid transparent}
 .vc .t{font-weight:700;font-size:14px;line-height:1.4}
 .vc .s{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.18em;color:var(--mute)}
+.film{display:grid;gap:12px}
+.film .vid{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--bg2);box-shadow:var(--glow-img)}
+.film .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film .catch{font-family:var(--mincho);font-weight:800;font-size:clamp(21px,6vw,30px);line-height:1.5}
+.film .t{font-weight:700;font-size:16px;line-height:1.4}
+.film .s{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.18em;color:var(--mute)}
+.film .vl{color:var(--mute);text-decoration:underline;text-underline-offset:3px;justify-self:start}
 
 
 /* article */
@@ -506,6 +513,7 @@ const ytId=u=>{const m=String(u||"").match(/(?:youtu\.be\/|v=)([\w-]{6,})/);retu
 function vVideo(){
   const v=REL.filter(r=>r.mv);
   return `<div class="wrap"><header class="pagehead"><span class="en">VIDEO</span><p class="jp">映像</p><p class="lede">ミュージックビデオはYouTubeで公開しています。</p></header>
+    <section class="sec">${sh("SHORT FILM","短編アニメ映画")}<div class="film"><span class="vid"><iframe src="https://www.youtube-nocookie.com/embed/CDICKq2dgOU" title="Astronaut" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></span><p class="catch">一人は孤独じゃない</p><div style="display:grid;gap:3px"><span class="t">Astronaut</span><span class="s">2026.11.03</span></div><a class="s vl" href="https://www.youtube.com/watch?v=CDICKq2dgOU" target="_blank" rel="noopener">YouTubeで開く</a></div></section>
     <section class="sec">${sh("MUSIC VIDEO",`${v.length}本`)}<div class="vg">${v.map(r=>`<div class="vc"><span class="vid"><iframe src="https://www.youtube-nocookie.com/embed/${ytId(r.mv)}" title="${esc(r.t)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></span><span class="t">${esc(r.t)}</span><span class="s">${dot(r.d)}</span><a class="s vl" href="${r.mv}" target="_blank" rel="noopener">YouTubeで開く</a></div>`).join("")}</div></section>
     <section class="sec"><div class="btns">${ext(SITE.follow[1][1],"YouTubeチャンネル","btn solid")}${ext(SITE.follow[0][1],"Instagramのリール")}</div></section></div>`;
 }
