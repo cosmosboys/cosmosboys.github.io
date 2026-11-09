@@ -108,19 +108,24 @@ main{min-height:70vh}
 .hero h1 span{display:block}
 .hero .tl{font-family:var(--disp);font-stretch:110%;font-weight:700;font-size:12px;letter-spacing:.24em;margin-top:16px}
 .hero .tl em{font-style:normal;color:var(--coral);text-shadow:var(--glow-c)}
-.next{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start;justify-items:start;text-decoration:none;padding-top:22px;border-top:1px solid var(--line)}
-.next>a{display:block;width:min(100%,320px)}
+.next{display:grid;grid-template-areas:"head head" "art info";grid-template-columns:46% minmax(0,1fr);gap:10px 14px;align-items:start;justify-items:stretch;text-decoration:none;padding-top:22px;border-top:1px solid var(--line)}
+.next-head{grid-area:head;min-width:0}
+.next>a{grid-area:art;display:block;width:100%;min-width:0;align-self:start}
+.next-info{grid-area:info;min-width:0;display:grid;gap:12px;align-content:start;align-self:start}
 .next img{width:100%;aspect-ratio:1;object-fit:cover;box-shadow:var(--glow-img)}
 .next .k{font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.24em;color:var(--teal)}
-.next .t{font-family:var(--disp);font-stretch:105%;font-weight:800;font-size:clamp(20px,5.4vw,32px);line-height:1.08;margin-top:6px;text-wrap:balance}
-.next .d{display:flex;align-items:baseline;gap:14px;margin-top:10px;flex-wrap:wrap}
+.next .t{font-family:var(--disp);font-stretch:105%;font-weight:800;font-size:clamp(22px,6vw,32px);line-height:1.08;margin-top:6px;text-wrap:balance}
+.next .d{display:flex;align-items:baseline;gap:5px 10px;flex-wrap:wrap}
 .next .d b{font-family:var(--disp);font-stretch:85%;font-weight:700;font-size:15px;letter-spacing:.06em}
 .next .d span{font-size:12.5px;color:var(--mute)}
+.next .count{margin-top:0}
+.next .count b{font-size:36px}
+.next-info .btns{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:2px}
+.next-info .btn{width:100%;min-height:42px;padding:0 10px;letter-spacing:.14em}
 .count{display:flex;align-items:baseline;gap:8px;margin-top:8px;font-family:var(--disp);font-stretch:75%}
 .count b{text-shadow:var(--glow-t);font-weight:800;font-size:40px;line-height:1;color:var(--fg)}
 .count span{font-weight:700;font-size:11px;letter-spacing:.2em;color:var(--mute)}
-.next{max-width:560px}
-@media (min-width:860px){.next{gap:24px}.next>a{width:360px}}
+@media (min-width:860px){.next{grid-template-areas:"art head" "art info";grid-template-columns:400px minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:36px;row-gap:20px;width:100%;max-width:960px;margin-inline:auto;align-items:start}.next>a{width:400px;align-self:start}.next-head{align-self:start}.next-info{align-self:start;gap:20px;align-content:start}.next .k{font-size:12px}.next .t{font-size:40px;line-height:1.05;margin-top:10px}.next .d b{font-size:17px}.next .d span{font-size:13.5px}.next .count b{font-size:56px}.next-info .btns{display:flex;margin-top:8px;gap:12px}.next-info .btn{width:auto;min-height:52px;padding:0 24px;font-size:13px;letter-spacing:.18em}}
 
 /* lists */
 .nl li{border-bottom:1px solid var(--line)}
@@ -144,11 +149,15 @@ main{min-height:70vh}
 .rc .s{font-family:var(--disp);font-stretch:85%;font-weight:600;font-size:12px;letter-spacing:.08em;color:var(--mute)}
 .rc .badge{position:absolute;left:8px;top:8px;background:var(--bg);color:var(--coral);font-family:var(--disp);font-weight:700;font-size:11px;letter-spacing:.16em;padding:2px 8px}
 
-.latest{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start;justify-items:start;max-width:560px}
-.latest>a{display:block;width:min(100%,320px)}
+.latest{display:grid;grid-template-areas:"head head" "art info";grid-template-columns:46% minmax(0,1fr);gap:10px 14px;align-items:start;justify-items:stretch}
+.latest-head{grid-area:head;min-width:0}
+.latest>a{grid-area:art;display:block;width:100%;min-width:0;align-self:start}
+.latest-info{grid-area:info;min-width:0;display:grid;gap:14px;align-content:start;align-self:start}
 .latest img{width:100%;aspect-ratio:1;object-fit:cover;box-shadow:var(--glow-img)}
-.latest .lt{font-family:var(--disp);font-stretch:105%;font-weight:800;font-size:clamp(20px,5.6vw,30px);line-height:1.1;margin-top:8px;text-wrap:balance}
-@media (min-width:860px){.latest{gap:24px}.latest>a{width:360px}}
+.latest .lt{font-family:var(--disp);font-stretch:105%;font-weight:800;font-size:clamp(22px,6vw,30px);line-height:1.1;text-wrap:balance}
+.latest-info .btns{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.latest-info .btn{width:100%;min-height:48px;padding:0 10px;letter-spacing:.12em}
+@media (min-width:860px){.latest{grid-template-areas:"art head" "art info";grid-template-columns:400px minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:36px;row-gap:20px;width:100%;max-width:960px;margin-inline:auto;align-items:start}.latest>a{width:400px;align-self:start}.latest-head{align-self:start}.latest-info{align-self:start;gap:20px;align-content:start}.latest .lt{font-size:36px;line-height:1.08}.latest-info .tag{font-size:12px;padding:2px 9px}.latest-info .btns{display:flex;gap:12px}.latest-info .btn{width:auto;min-height:52px;padding:0 24px;font-size:13px;letter-spacing:.18em}}
 /* ranking */
 .rank li{border-bottom:1px solid var(--line)}
 .rank a{display:grid;grid-template-columns:40px 56px 1fr 12px;gap:14px;align-items:center;padding:12px 0;text-decoration:none}
@@ -461,15 +470,15 @@ function vHome(){
   const n=nx?daysTo(nx.d):0;
   return `<section class="hero"><canvas id="sky" aria-hidden="true"></canvas><div class="wrap">
     <div><div class="loc">YOKOHAMA, MINATO MIRAI</div><h1><span>Cosmos</span><span>Boys</span></h1><p class="tl">SPACE <em>×</em> FRIENDSHIP <em>×</em> REACHING</p></div>
-    ${nx?`<div class="next"><a href="#r-${nx.id}" aria-label="${esc(nx.t)}の作品ページ"><img src="${IMG(nx.id)}" alt="${esc(nx.t)}のジャケット"></a><div><div class="k">NEXT RELEASE</div><div class="t">${esc(nx.t)}</div><div class="d"><b>${dot(nx.d)}</b><span>リリース</span><span class="tag soon">Pre-Save受付中</span></div><div class="count">${n===0?`<b>TODAY</b>`:`<span>あと</span><b>${n}</b><span>DAYS</span>`}</div><div class="btns" style="margin-top:14px">${nx.u?ext(nx.u,"Pre-Saveする","btn solid"):""}<a class="btn" href="#r-${nx.id}">作品ページ</a></div></div></div>`:""}
+    ${nx?`<div class="next"><div class="next-head"><div class="k">NEXT RELEASE</div><div class="t">${esc(nx.t)}</div></div><a href="#r-${nx.id}" aria-label="${esc(nx.t)}の作品ページ"><img src="${IMG(nx.id)}" alt="${esc(nx.t)}のジャケット"></a><div class="next-info"><div class="d"><b>${dot(nx.d)}</b><span>リリース</span><span class="tag soon">Pre-Save受付中</span></div><div class="count">${n===0?`<b>TODAY</b>`:`<span>あと</span><b>${n}</b><span>DAYS</span>`}</div><div class="btns">${nx.u?ext(nx.u,"Pre-Saveする","btn solid"):""}<a class="btn" href="#r-${nx.id}">作品ページ</a></div></div></div>`:""}
   </div></section>
   <div class="wrap">
     <section class="sec">${sh("NEWS","お知らせ","news")}<ul class="nl">${NEWS.filter(newsLive).slice(0,3).map(newsRow).join("")}</ul></section>
     <section class="sec">${sh("RANKING","よく聴かれている曲")}<ol class="rank">${RANK.map(([t,id],i)=>`<li><a href="#r-${id}"><span class="rn">${i+1}</span><img src="${TH(id)}" alt="" loading="lazy" decoding="async"><span class="t">${esc(t)}</span><span class="go" aria-hidden="true"></span></a></li>`).join("")}</ol></section>
     <section class="sec">${sh("LATEST","最新の作品")}
-      <div class="latest"><a href="#r-${latest.id}"><img src="${IMG(latest.id)}" alt="${esc(latest.t)}のジャケット"></a>
-      <div style="display:grid;gap:14px;align-content:start;min-width:0"><div><span class="tag rel">${latest.ty} / ${dot(latest.d)}</span><h3 class="lt">${esc(latest.t)}</h3></div>
-      </div><div class="btns">${latest.u?ext(latest.u,"配信サービスで聴く","btn solid"):""}${latest.mv?ext(latest.mv,"MVを見る"):""}</div></div>
+      <div class="latest"><div class="latest-head"><h3 class="lt">${esc(latest.t)}</h3></div><a href="#r-${latest.id}"><img src="${IMG(latest.id)}" alt="${esc(latest.t)}のジャケット"></a>
+      <div class="latest-info"><div><span class="tag rel">${latest.ty} / ${dot(latest.d)}</span></div>
+      <div class="btns">${latest.u?ext(latest.u,"配信サービスで聴く","btn solid"):""}${latest.mv?ext(latest.mv,"MVを見る"):""}</div></div></div>
     </section>
     <section class="sec">${sh("DISCOGRAPHY","作品","music")}<div class="grid">${REL.slice(0,4).map(relCard).join("")}</div></section>
   </div>`;
